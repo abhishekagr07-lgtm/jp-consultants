@@ -1,0 +1,2791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>J.P. Consultants — Govt. Approved Property Valuation | Lucknow</title>
+  <meta name="description" content="J.P. Consultants — Government Approved Valuer in Lucknow. Panel Valuer for 7 leading banks. Property valuation, building cost estimation, civil engineering drawing & consultancy. Est. 1985. Call 80095 91131."/>
+  <meta name="keywords" content="property valuation Lucknow, panel valuer Lucknow, bank valuation Lucknow, government approved valuer UP, real estate valuation Lucknow, building estimate Lucknow, JP Consultants, Jai Prakash Agrawal valuer, NPA valuation, home loan valuation Lucknow"/>
+  <meta name="author" content="J.P. Consultants"/>
+  <meta property="og:title" content="J.P. Consultants — Govt. Approved Property Valuation Lucknow"/>
+  <meta property="og:description" content="Panel Valuer for Canara Bank, Bank of India, PNB & more. Est. 1985. Serving banks across Lucknow & Gorakhpur."/>
+  <meta property="og:type" content="website"/>
+  <meta name="robots" content="index, follow"/>
+  <!-- Favicon: JP initials as inline SVG data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23B91C1C'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='14' font-weight='bold' fill='white'>JP</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F5F3EF;
+      --surface: #EDEAE3;
+      --ink: #1A1814;
+      --muted: #7A7570;
+      --accent: #B91C1C;
+      --accent-light: #DC2626;
+      --gold: #E8A020;
+      --border: rgba(26,24,20,0.1);
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--ff-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+      background: var(--ink);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.45rem 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .top-bar-left span, .top-bar-right span {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.02em;
+    }
+    .top-bar-right {
+      display: flex; align-items: center; gap: 1.25rem;
+    }
+    .top-bar-wa {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.72rem;
+      color: #25D366;
+      text-decoration: none;
+    }
+    .top-bar-wa:hover { color: #20bd5a; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: rgba(245,243,239,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.85rem;
+      text-decoration: none;
+    }
+    /* Monogram badge */
+    .nav-logo-badge {
+      width: 46px; height: 46px;
+      background: var(--accent);
+      border-radius: 4px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(185,28,28,0.25);
+    }
+    .nav-logo-badge::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    .nav-logo-badge-text {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+      font-style: italic;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo-badge-dot {
+      width: 14px; height: 1px;
+      background: var(--gold);
+      margin-top: 3px;
+    }
+    /* Text block */
+    .nav-logo-text {
+      display: flex; flex-direction: column;
+      gap: 0.15rem;
+    }
+    .nav-logo-name {
+      font-family: var(--ff-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.06em;
+      line-height: 1;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .nav-logo-name .name-jp {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 600;
+    }
+    .nav-logo-name .name-sep {
+      width: 4px; height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+      margin-bottom: 2px;
+    }
+    .nav-logo-name .name-co {
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      color: #1A1814;
+    }
+    .nav-logo-tagline {
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .nav-logo-tagline-line {
+      height: 1px; width: 20px;
+      background: linear-gradient(to right, var(--accent), var(--gold));
+    }
+    .nav-logo-tagline span {
+      font-family: var(--ff-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-logo-tagline .est {
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+      transition: background 0.25s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: #fff !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 4rem 6rem 6rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--gold);
+      display: inline-block;
+    }
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 1.75rem;
+      color: var(--ink);
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+    .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border: none; cursor: pointer;
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .btn-ghost {
+      color: var(--ink);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: gap 0.25s;
+    }
+    .btn-ghost:hover { gap: 0.85rem; }
+    .btn-ghost::after { content: '→'; }
+
+    .hero-right {
+      position: relative;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .hero-img-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(185,28,28,0.08) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231A1814' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-building {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .building-svg { width: 70%; opacity: 0.12; }
+
+    .hero-stat-strip {
+      position: absolute; bottom: 3rem; left: 3rem; right: 3rem;
+      display: flex; gap: 2rem;
+    }
+    .stat-card {
+      background: rgba(245,243,239,0.92);
+      backdrop-filter: blur(8px);
+      padding: 1.25rem 1.75rem;
+      border-radius: 3px;
+      border-left: 3px solid var(--gold);
+      flex: 1;
+    }
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--ink);
+      padding: 1.75rem 6rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .trust-label {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .trust-logos {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .bank-tile {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      padding: 0.45rem 0.85rem;
+      transition: background 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+    .bank-tile:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(196,154,60,0.4);
+    }
+    .bank-tile img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .bank-tile span {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 7rem 6rem; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--ink);
+      max-width: 520px;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    /* ── ABOUT ── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .about-text p {
+      color: var(--muted);
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+    .about-text p + p { margin-top: 1rem; }
+    .about-visual {
+      position: relative;
+    }
+    .about-card {
+      background: var(--surface);
+      border-radius: 4px;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+    }
+    .about-card-title {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .about-list { list-style: none; }
+    .about-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--ink);
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .about-list li:last-child { border-bottom: none; }
+    .about-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .cert-badge {
+      position: absolute;
+      top: -1.5rem; right: -1.5rem;
+      background: var(--accent);
+      color: #fff;
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      box-shadow: 0 8px 24px rgba(185,28,28,0.3);
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--surface);
+    }
+    .services-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(26,24,20,0.08);
+    }
+    .service-icon {
+      width: 44px; height: 44px;
+      background: rgba(185,28,28,0.08);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+    .service-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .service-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .service-tag {
+      margin-top: 1.5rem;
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      width: 100%;
+    }
+
+    /* ── PROCESS ── */
+    #process { }
+    .process-header { margin-bottom: 5rem; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 10%; right: 10%;
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .step {
+      text-align: center;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .step h4 {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .step p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── WHY US ── */
+    #why {
+      background: var(--ink);
+      color: #fff;
+    }
+    #why .section-title { color: #fff; max-width: 600px; }
+    #why .section-label { color: var(--gold); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 4rem;
+      align-items: start;
+    }
+    .why-left p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-top: 1.5rem;
+    }
+    .why-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    .why-feature {
+      display: flex; gap: 1.5rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .why-feature:hover {
+      border-color: rgba(196,154,60,0.3);
+      background: rgba(255,255,255,0.03);
+    }
+    .why-feature-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .why-feature-text h4 {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .why-feature-text p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ── REGN STRIP ── */
+    .regn-strip {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+    .regn-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .regn-item span {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.15rem;
+    }
+
+    /* ── TEAM CARDS ── */
+    .team-cards { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .team-card {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+    }
+    .team-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .team-name {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .team-role {
+      font-size: 0.78rem;
+      color: var(--gold);
+      margin: 0.2rem 0 0.6rem;
+      letter-spacing: 0.03em;
+    }
+    .team-contacts { display: flex; flex-direction: column; gap: 0.2rem; }
+    .team-contacts span { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-info p {
+      color: var(--muted);
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+    .contact-details {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-detail {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .contact-detail-icon {
+      width: 36px; height: 36px;
+      background: rgba(185,28,28,0.08);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .contact-detail-text {
+      font-size: 0.875rem;
+      color: var(--ink);
+    }
+    .contact-detail-text span {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3rem;
+    }
+    .contact-form h3 {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 0.75rem 1rem;
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+      color: var(--ink);
+      transition: border-color 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.25s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--accent-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 6rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .footer-logo span { color: var(--gold); }
+    footer p { font-size: 0.78rem; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow { animation: fadeUp 0.6s ease 0.1s both; }
+    .hero-title { animation: fadeUp 0.6s ease 0.25s both; }
+    .hero-sub { animation: fadeUp 0.6s ease 0.4s both; }
+    .hero-actions { animation: fadeUp 0.6s ease 0.55s both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .top-bar { display: none; }
+      nav { top: 0; }
+      nav { padding: 1.25rem 2rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 4rem 2rem; }
+      section { padding: 5rem 2rem; }
+      #about { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .process-steps::before { display: none; }
+      .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+      .trust-bar { padding: 1.25rem 2rem; gap: 1rem; }
+      .trust-logos { gap: 0.5rem; }
+      footer { padding: 2rem; flex-direction: column; gap: 1rem; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .services-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    }
+    /* ── SHRINKING NAV ── */
+    nav.scrolled {
+      padding-top: 0.85rem;
+      padding-bottom: 0.85rem;
+      box-shadow: 0 2px 20px rgba(26,24,20,0.08);
+    }
+    nav { transition: padding 0.3s, box-shadow 0.3s; }
+
+    /* ── STATS COUNTER STRIP ── */
+    #stats {
+      background: var(--accent);
+      padding: 3.5rem 6rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-item {}
+    .stat-counter {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+      display: block;
+    }
+    .stat-counter-suffix {
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+    .stat-item-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-top: 0.5rem;
+      display: block;
+    }
+    .stat-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+      align-self: stretch;
+      display: none;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--surface);
+    }
+    .testimonials-header { margin-bottom: 3.5rem; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem 2rem 1.75rem;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      color: var(--accent);
+      opacity: 0.15;
+      position: absolute;
+      top: 0.5rem; left: 1.25rem;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author {
+      display: flex; align-items: center; gap: 0.85rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .testimonial-avatar {
+      width: 38px; height: 38px;
+      background: var(--accent);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 0.7rem;
+      font-family: var(--ff-display);
+      font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .testimonial-role {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+    .testimonial-stars {
+      margin-left: auto;
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+    }
+
+    /* ── GOOGLE MAP ── */
+    .map-wrapper {
+      margin-top: 2rem;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .map-wrapper iframe {
+      width: 100%; height: 220px;
+      border: none; display: block;
+    }
+
+    /* ── FLOATING WHATSAPP ── */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 999;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;
+    }
+    .wa-float-btn {
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: waPulse 2.5s infinite;
+    }
+    .wa-float-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+    }
+    .wa-float-btn img { width: 30px; height: 30px; }
+    .wa-float-tooltip {
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(8px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+    .wa-float:hover .wa-float-tooltip {
+      opacity: 1; transform: translateX(0);
+    }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+    }
+
+    /* ── SCROLL TO TOP ── */
+    .scroll-top {
+      position: fixed;
+      bottom: 6rem; right: 2rem;
+      z-index: 998;
+      width: 40px; height: 40px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--ink);
+      box-shadow: 0 2px 12px rgba(26,24,20,0.1);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s;
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: all; }
+    .scroll-top:hover { transform: translateY(-2px); }
+
+    /* ── RESPONSIVE ADDITIONS ── */
+    @media (max-width: 1024px) {
+      #stats { grid-template-columns: repeat(2, 1fr); padding: 3rem 2rem; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      #stats { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-text">
+        <div class="nav-logo-name">
+          <span class="name-jp">J.P.</span>
+          <span class="name-co">Consultants</span>
+        </div>
+        <div class="nav-logo-tagline">
+          <div class="nav-logo-tagline-line"></div>
+          <span class="est">Est. 1985</span>
+          <span>&nbsp;·&nbsp; Valuation &amp; Civil Engg.</span>
+        </div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#" onclick="openAdmin(event)" style="color:var(--gold)!important">🔐 Staff Login</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Valuation</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Panel Valuer — 7 Leading Banks</div>
+      <h1 class="hero-title">
+        Precision<br/>
+        Real Estate<br/>
+        <em>Valuation</em>
+      </h1>
+      <p class="hero-sub">
+        J.P. Consultants has been delivering bank-grade property valuation, civil engineering, drawing, estimate &amp; consultancy services since 1985.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request a Report</a>
+        <a href="#services" class="btn-ghost">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-overlay"></div>
+      <div class="hero-building">
+        <svg class="building-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <rect x="60" y="40" width="80" height="240"/>
+          <rect x="40" y="100" width="20" height="180"/>
+          <rect x="140" y="100" width="20" height="180"/>
+          <rect x="75" y="55" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="93" y="55" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="111" y="55" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="75" y="83" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="93" y="83" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="111" y="83" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="75" y="111" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="93" y="111" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="111" y="111" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="75" y="139" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="93" y="139" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="111" y="139" width="12" height="18" fill="white" opacity="0.3"/>
+          <rect x="85" y="200" width="30" height="80"/>
+        </svg>
+      </div>
+      <div class="hero-stat-strip">
+        <div class="stat-card">
+          <div class="stat-num">Estd.</div>
+          <div class="stat-label">1985</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">7</div>
+          <div class="stat-label">Bank Panels</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">40+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <p class="trust-label">Empanelled Panel Valuer with</p>
+    <div class="trust-logos">
+      <div class="bank-tile">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAoAEADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiqGramul2fmiF55nYJFBH96RvQfgCfwqoxcnZEzmoRcpbIv0VBb3kN1ZR3kLhoZEEit7YzVaPWrF7YTtNsXoQwPB9KOSXYTqQVrs0KKpvqloiznzCzQLudQpBHp1otdUtLxlSKQ+YyhtjKQQPejkla9g9pC9rlyiiipLKdxfNDdLAIeX+67uFVj6A88+1c5Hqhv9Rl1BZ7UyW7tbWsO7dg5+eQ8jGcYyew966uaCO4iaKVA6N1BqjDotqpl+0qLoSALiZQ2FHQe/1rmarJyinpLrouVddOr6J39UOUYy5Zdtbd30/4OnoY9tcpolzf6bdYktJIXvLfb0YYJljH45IHoatypp1tEUu7XBILAq5dsbS3U8g9fyq5D4d0i3uluYdOt45VBAKrgAEYPHTpU50uxYktbRkkYJI68Y/kSK9J1YXVr+fr95wxoVUrO3l5L7v6RnNcaUkbb4ZSrqQUIz91ySMZ67smnRtp9pHczwW7+baQmTY7HsG+uDwQavnS7Ekk20eT1469f8TUn2C1/ffuE/fAiTj7wOSc/mfzNT7SPmWqU730KY1yBY2aZGRlZ1IXn7uT06jIGeRUtrqsV3ePbKpDKgfnrjcynI9iv61I2l2LklraMk5ycdevX16n86dHYWsUwlSBFkGcMBzznP8AM1LdO2iZcVWurtWLNFFFZG4UUUUAFFFFABRRRQB//9k=" alt="Canara Bank" style="height:28px;width:auto;object-fit:contain;background:white;border-radius:2px;padding:2px;"/>
+        <span>Canara Bank</span>
+      </div>
+      <div class="bank-tile">
+        <img src="data:image/png;base64,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" alt="Bank of India" style="height:28px;width:auto;object-fit:contain;background:white;border-radius:2px;padding:2px;"/>
+        <span>Bank of India</span>
+      </div>
+      <div class="bank-tile">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAoAEcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iuS8WeIbzTLuKCydFIj3yFkDZJOFH6GsFfGWtxy8yQSbPvqYsDPpkflXn1cyo0puEr3R6dHKq9amqkbWZ6XRWRZ6vLNrcumzQqCLdZwy9Vz1Vh6+9SalrCafcww+X5hfJbDAbVwef0P5V1e3hy819L2ON4epzKFtWr/ACNOiqMGrWtzBLNCzMkX3uMfzqoPEloZfuuYdu4SBT6A9Me9N16aSbluJYeq20ovQ2aKoPrFnHZx3TORFISFOOTj2qsfENv9sWII5h2EmXHAbPT/AD7UOvTW7COHqy2ibFFVrS9ivVcxCQBCAd6FecZ7+xFFaKSkroylFxdmcF4gV7jVJ5zkZf5SBk8DAwO5wCR7sSeBWVpdw9vq1t5MSOTIEWMKH25OM7um/wB+fyr0fU9Eh1Mgu2zAwcAc1Tg8MJaHdb3JjkIwZtm6QD/ZLEhfwFeHVy+q63PHvc+go5lRVDkl2tYTw15aXeq2+wPPDPtkuSSWmyOM+46YHFT6pFpC30bXqMZpV25XcRjIXJx05YDPvV/TtNttLtfItkIXJZmY5Z2PUk9zVbUNEi1C8W4knlRlQKuwLlcEnIJGQcnt1xXo+ynGgoWTf4bnmOtCWIc+Zpfjt/WnQjaHSbbTZYlnVYmQs5WQMzhRg+ueB2qKbTtFitmkkkVItpcjzOcLnOO/cjj6UweE7MqVaaYgnJ6DPXjp/tGppfDdtMIleWTbHEsYAC8hc47ejHNRyVGtaaL9pST0qPzI5Dos7wWkgaMxfOhbcoUnDkFumehOacuk6ZsERuiZc5VhMAwbg5A7H5QfwzS3HhuC4uZ7hrmZXlJJ2hRwccdMkfKMA9KY3hWzMSxiWUAKwJAXJycg5x24/IUOnUbd6af+Q1VpJK1Rr/MvabLYqrwWs4kIc7iz5ZjgZOe/bmioLLQILO9S6E0jum4gMABls5PA46miuqjz8tpqxx1+TnvB3NeiiitTEKKKKACiiigAooooAKKKKAP/2Q==" alt="Bank of Baroda" style="height:28px;width:auto;object-fit:contain;background:white;border-radius:2px;padding:2px;"/>
+        <span>Bank of Baroda</span>
+      </div>
+      <div class="bank-tile">
+        <img src="data:image/png;base64,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" alt="Union Bank of India" style="height:28px;width:auto;object-fit:contain;background:white;border-radius:2px;padding:2px;"/>
+        <span>Union Bank of India</span>
+      </div>
+      <div class="bank-tile">
+        <img src="data:image/png;base64,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" alt="Bank of Maharashtra" style="height:28px;width:auto;object-fit:contain;background:white;border-radius:2px;padding:2px;"/>
+        <span>Bank of Maharashtra</span>
+      </div>
+      <div class="bank-tile">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAoCAYAAABD0IyuAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAUnElEQVR4nM2af5BeV3nfP8855977/tp9d1fWam3LlmXLkkWCHcnYFGICMRBwWprSFMpAaJvQNi1lCO1MOyRlaP9op50mnQxNJ0N+zpCE4qSUJAQGUlqMCeVHsa3I+olkWZZtSSutVrvvvr/ur3Oe/nHv+2pXCIe2MO2d2Zl9n3vuOc95zvPrPM9XVFUBQghsbGwQQsA5x+zsLABlWdLv91FVkiSh3W4DkKYpo9EIgGazSbPZBGA0GpGmKQCdToc4jgEYDAbkeY6IMDs7i7UWVWVjYwPvPcYYut0uIoL3no2NDVQV5xwzMzOICEVR0O/3AbbwkmUZw+Hwu+al3+9TFAUiwszMDM65LbyICIZNTy2jb3u+E/0vevd/OoeIbKFPfr/UXN9L3lUVF0IAmJ6aqiIiTOghhCl98nvy3IguIhhjpgtspk/eTeiTtYwxGGMIIUzXnsyxmZfJmpNnQldVjDHTNa4fPxHsd8PjdN21tTVVVay1dDqdqSoPBgNUlSiKpipbFMVUZZMkmapsmqZTlW21WlOVHY1G5HkOVKo8UdnhcEhZllNVngir3+8TQvie8dJsNkmSZAsvIkK73cY5B1RmNVGKTqczFYwLIaCA1FLffBqqOj3V609pIuGXpuu30UVkekqTcZtPNISA2XxyImgIBFX4v+KF6ZqTv+vHb6Y7ay1QqZz3vtpOrUGqTE+NekOTU1eY0gGsdYCiCn7KmGCtrYVR0+vNWesQodpwCGitKSKCGENZO0HvA8ZaRAExeB9AQBUq3gWQeu5ra06eKS/1mhNBTPYqIpX2SDXH1K9pKNUjFKVn2B+gYRIJOiBQFiWDwRBVJU5i2u0WAGmaMR4NCWJoNhq0WgkEYTgekGYFRqHVaVdmpTAcDMiLvDafWayzaFD6/WtRaXa2i5jqIPqbolJnU1QaDvqoVubTmkSlNGM0uhaVGrVZja+LSlHNy2BwLSp16qiEKoONdbwajID4UKqRWsLZgKBgnAXXnEpd00owJonBxJOzIIxTIGCaTcDVgzN0nBNEsM0WTAKfT/F5xYxpdKZzk4+mgpGkfU2908qvWOcgmvCi+PEQUGySbOHFj6vUwTYbQFQPz/FpVtPb13gpU3xxA16KlP5wTBEUJwifOXqeR5+6jIsdpa9tfBIyqdVdK621W+gBECJVHt7X5anzA4aZYlTxYrCmtlmtxk6i44S+1ewqOvX4MgRkYgIiU7MLYRLCwRqD1uZ7jS5YIxV/4dqaVcSpbNArTF4YYzCiiMBoXPLeVy3yAztmcBQpjz+7zse/fJHmTTF4T5g4RRVUDOoDopXAghFEKqdsFLy15EPItOA/HV6FrN4ctXNTAfHV74nD25w/TGkB1IKETXQBSlCzdbzWpyS+/uba6y1zT14YIAjgq7kkXJtf62M2BgYpf+3gIq9od3CigTiKcLMxT3zgFdzWbVKqYoBCBOcV025U8wZF0xwj4FWJRDixMuB1H3mCRhIz32qyEQUMAsaClogRNFh0C/dbHwVEDDYEvFGsGAgOpQCNCKI3HO8wqFSRLMANVxCjoIaiBGsTjC0xJQSptKpSABBrCQTi2kE7xCIIZQjMtWJmmglTuwkBjGHt8SdY+bVPorfcwr5ffB/ItROcT3IKFbSODD6AElCEWD1ZFsDFiKEO/VRCqk9KagYleEr1xMGQFSW4Amcs3ig6DXKCqT9VX1AOAVtgms3apLZqomhAx4qIsnteuDgsSHOLjYSAolpbRqjGhKB479EQcMRNGrGDoBS+mrz0fppQXf7aIZ79Nx8j+dPHKfa+DP9L70d9lfs4I+QaCKYkspU2AkRWyLOS27rCO++/mX/3+DJpYRBj0FKBgIuVMihaGjCKcQ4XlA8+vEgUMi6kll99bAUSh3OBYAxaeIL3EIRd2yLe9dAi47TgY09d4eooYCKHWAuU+KxgthnxobfcglXPcOCZW2jyS196gRfWBNUMbBWNjDVAtYEsLwjpcBJK6tOjTn6MIzKw/uRxnvuNT9JanEVe9SDSadM7/AwL9+0hzz1i63Q7VE5QxCPBsL1heMfBm9jeibnvjnn+bi+jFQnDUrjrphgTNTn03CrbZ2P2zDc4s6F84hsXeMcD2/jxu7dx+FLK5XOrfOSttyJYnn6xzx+cHLJnqcl7HtjOoefX+cHFBg/ctcByvyCxcOtCk7PLPT5xbEC3GfM39i2wbb5FLMKexTl+78vP8p59c/zM/Yu8eLXg3tt30euNmGs6fuvIGn9+YbzFBxo04IPW5hHQokDTlN7RU5z56CdJFPLPfwOzbyfJD+/n5G/+Z9aOnCKK7RZHF1QQFfDK4kzEm/YusPumJsurIxbbEW85sIM33NOl9IHPHTnPA7d32TMXsWuhRTOyJLHlXQeXsFLy2cOX2Hdblx/eNcfB21oc3DXLcJwiIWP/vOWnH7oVGxkeO3mFrzxzhQNLbe5f6vDIvUuoscQUvHr3DHOJ5fcPXeT4xQ323N5leTXlyef6HNjVoqMDtnUtc52Iy8McNQY0VBHTOQz5mDwvIATsbIvLj/4ph/f/dc7+zL8iWuyS/9lJZt74apJ9tzP69U8zVwRO/sdHWTv9fJUN+/qy6SGoQ8UyLgOli/jity5x5MqIx54f8tvfXOXRJ1d5xe4lbp+P6HYsXzx9lRNXxvz5xZRLacHvPLXMsavw/FD5ny8M+eZyxleeG/LfnhsizvA3D+xgOVc+c+gipy57rqaOx071WJyL+dKz63z62Bq9NBCMY9dCi42sJA0xw6ykISV3bm+xvdvkibNDBppwcjlw6ELKcOTBCmggjiNM0sIx8c1ahSy90iN//gWSdhd/bpmZv/0Id//z94AIJ54+w+gPHyf6kXs5/fO/woFf/ifY9lytOYrXAA5OXCl4+8ePElvLajqCkMOJMa/Y7WjYgmEZ8bO/f46b5yMev/A8l4YKJuaXH78K5jKu0eDQxT6/+8Rlgo2gLCGO+PAXX6RtLasjX/sooR1Z3v6JU6wMFbyBxHJ8JeWffeEch88PeHFDeHJ5xB3bEj55csw3l/uQBTh0BZzDSGUtxobKIdexzWFcdWETIQxzbnrra4m/cojUCPz3pzGXR5Rpioki2L2E+YlX0fyzb7F28jj9d70Z+8jDaKjuL0IldRdZ+iOBbIzMdIgaTSTKOTcQfuw3TtBqWkZWONMH0Yg4MZQKtuFQ5yjz6qCCaxLHJRrHeA3kONICcBYjle9MC8MoQNSwFGXAUGDiiM8+OYSOJW5GhDLnzFrBmTwFK9jEYaK4ikJBq3CNVjIIAQ0eQ9QgSaIqOmc5yR072fOL76fc1sT8xKvJj5/h1C/8Cqd+8ucZP/oYbvcSo/k20a7d2G57akq2TvwwQpkW/MhdbX71nfvp2JJ8PSMrYWU1Y5AFhjkQFMZDtPTkGxmuzPjwG26B3PPgLRG/8Pol7tlmyXsFxSAjZJ4wzGGU8y9fv0gTi88FdQEdFRRrBQe2wb9+423oqOSvPjDLXMOTXx1TYmEt4y37u3zotTdz71KbYmWATzNEAlOrESHPC/w0Kk3SY2tAlbk7b2f/e3+KE//hd5h99xvRF1YZfuMY7q0PkV9a567f/hDt3TuJIsOFlRFibZWiS4BCePlSkw/+6G186snzPHhLwr772nzlbJ/X753j+IU1fvahO/n6s2s82ysYZ2P2Lc5yfnXEjo6j7I9523238dMHlzh+/igHb76JmUbC8Qs9Dt4xy5HzY5YaEX/57ib/41LK85czfu51t3D8uR7vfmgnz13N8dkGf+f+vSyYwNyBFn9ybIUH71ngbQd2cPjZy3Qk4x+/+VbOXc351Mk+YgVRrbW+SvgcvqzvKzKVmi89c/fu5Z5/9FOc/Qf/lnjkCa/7QVQK9r33bzGzdzdFUMTIVKgaFDEORjlv2j/PiUsDPvb1i3z+Aw9SZmPeuHsGtRGv3DVLkWa8bneH2zdKFltzWJTO3TN89vQGOMOuhYTjFzd4+8Gd5HnJ0mzMw3fO0HIlBxdjXrN3O80k5lPfPM4Hfux2XrOzw4/fNcNsEvHRr55n+455tBR+9O5FZhJ4094FVtbHuFK5c7HLA3u2Meh7Xrlrnk8dWcFEHVBfhWljEBdVd6UsLyr70krD1RhKH+geuIewNmJ8+hjmnkfY83Pvpr13N3lZoliC6NRdFUEog0Lb8MdPr/C777yHD79lL8cv9rhwdcQIy1ov5baFBleHBY1mxB8eWuGDb76DCOXE+RHHVzJIHLFRTq7lHH2xz2v3zHFsuc/yoODiRsrdO9qsH1nBC5SRcH7DY5zlj46vMt+M+OrZPgd2dVkZDjm8PCLPPLfMNXj5Updn1gZc6We0+jH7tzX5k+NrQIShvh8qJHGESZo4jFJnxiSuqkWY6QUusPPv/RWGF+7n1n/4Nhp77wSU2F3LCxNXXeIsSgiAE06vl7z2154mx2CCJ44ixnlBZAyB3jSR8iq8/4/PYBEyH6pcKna84xOnyNUQssBvHV4hK6sDwxjk2Dq+UOLEoJ0Gf/D0Cp9/ZpWNkUesYBoRhy+NeO9nBhgUMYai7DGTXGZcespQ5V/dBHq5QiOmCFpXDQK2zt4dJiKxFidwbnWIL0rKUN1pgkD8vnfRiCwr4xS9vEFwBkEIqsRGePHqCCdVyTCWqipjYkuhFgOodaSq2DjBT+y49nVOoFRDgWCiimgVMhKMUaI2jAKIrWWpADGRg1KrcmyUODYKcInZerG2pio9AC6GgQexDmsrDe8FsBFMLmJWBDFCUZSEssDhGoh1lLnylz56GOooM13F+6p04IRpoYdQ5z0CGoN3qBGulgEttC4zTIZWV3w/rbHWO9TJv9U6fvPdWKrfXqhLqvW4esh09gC+lnJZ1WG38l77zLqXUF0ap+VoZROXePGQBcZZjuZpleC9dgH+6cti1FoMgoghig0ziUEkMFIlUoPRqlhknK1VNEfFobT5oQVl596YTC2JQClCEkErAkplo4AiL0AFGydEIuTiiWOHUyiyEi/gFLyALZTMl2hWYETQJAZftVW8BoxCETtMqA7IGoOWnoBijMVbg1WgKNBae4TqyqIBJBK09FhjKK1BPHgse7sJ49LjSgJ3/9cv8fc/8iiyfQE7zBEjiLVonlHcdwfNQiiOPkfoJPimw0aWPDK4PbswR04jGfQf2s89wz7uW8v40hOrQXYtkbYcJo4IZ5cJ99+JPbNMOHcJs32OaHYWe+QcIS9g+wyhkyDOoaJVtrs+wu7YVpUUrg4wWU7IMmg2EGOR+VnKyGLHGXK1R9lt4hoNyizFDNIqUi50MeOcwoKKEjcbaBDk/Cq60MFbA2VOHDUol68y/8C/wOxcwGUhkA0LevvvpPXgD1A+c55idQOsJT/yDO1X3sdwbcD46yfpvu8nKXxG1htgVWnefQeytEjv0S/SXlwk3XYXft+QcOxF7Ge+Snn2Mu7199N+5EH8mXP4dhPdtoTeOyR74ll6jx0lKj1lliPOIj90N8VwiH3ZXqLYYjUweuo08X17kHFOtNglPXkWHjsKvR66cwnds4QOUnjqGdxrDqLrfcpmE8kK/OFncG94EOmNaO/byfjEWYpLK5h791L++/9C/PD9yB07cEfPcXU+gU+vslAaWnGCCyZQjsakXzuKpAXFiyuYflpV3voDyt/7AkVvAGVO9rmvUVy4TN4fEXU7rMvXMKMC88IKg49/DqMGv9BG8oD0hkQI2ZeeJD19FnOlhzl4D9p0+CeP41bH6NqAIooxYginzhL6I7jzZvy5KxRFQUMV88IVxt84RnTzApn3xNsXyAd9eOF5NM/Qk2dxczOUh09Rnr+E2TGHR4lnZ9Ajp/GxRdf6bHzh65i67sS5K9i1Hv6Pvozcso30+UvQjDCX1hGt2yppPtbx02fpH32WEDxiDOIs1lR+JKRZ5QStgTTHJXHV7ynLqrrvHDaJESBpN/Clx0eWEELVOik85ThFy0AaSowKjSRBYodaoUizqn5sLQ5DqItkvsihDJhGjHNRVRzzvmrBNCLiKMFQ3W1CUaAi1R1HDNZaQt2/ysZjjDFY57BiwQh5nmGa1T7IPXGrgVhLmo6ZedXLiRdmER+CTjoCw1ASgsc6Rwtb+3IY+KJCO7iYpPbiBTAKBWigaRMmjYwcGGcpBqWVNJm0vkYEfFkgYmlbNw0Ow1BUCANjmbHRNEoMfIkXxRpLp46GE16CKrGLmTRVSmBQZghCy8WT5gkpUJYFXqBjoykvKZAXGYgw6+LpmiNfkPcHhKA4U3cYfVmQ9jamDbfWXBcQijwn6/erDmKSkMzMVMyMxxR17zhqNYlbVU8oHw4pxmMAktkqAimK7/VJi6qQ3ux2MXVHs1jvU/oqOujcHFJ3RNP1dVBFnUNreEhRFKQbPUTBJAnUvBRpih8MUKBotYhalcjK4YB0nKECvjODTSohZBs9yrzqnRfdWSIXEVQp1voURnEIMhqNboiFmOZT3BiOMXl/fW+bTd/cCL7xUmMnc07625uaQtd/8G20G86t1CVX2bShSR61dY7p6zq/cuPxeNqrnpubA6qedK/Xq9qyccxMfTJ5nk+BO81mk1arateOx+MpiKjT6UwRBsPhcNoi7Xa7U4RBr9eboh3m5uamDfy1tbUp2uF7wUu73abZaG7hZQJcup4XYwxz3bnqYgxbgUPfz2dza+M7ac3/82dz8j0ej6ccfSfmX4o+NYNJ63ZShrgOVvK/M8d3M/eNoBzXw0peau4t8rhufgCZYPBUlfX19SkGr9vtAhUGb4KHazQaWzB4E+BOq9Xagnsb1853ZmZmC+5tAtzpdrtTqMb6+vq0qT8/Pz/d5Pr6+hTtMOGlKAo2NjYAtvCSZRmDweB7xssWDN7/F6r8Fzw3MsHv21qDwUAni25W/QmwZoKP24y1m6jnBHm5Gce2GfO2GTl1I7TW5jmup3+n8TfCzt1oTWALgOhG9Ako6vq5RQSXZdkNo9JoNJq2aSfQ1jzPt8BGJ9FnPB5vAeh8P6PSJPrkeT6NPpvNajMv7XabRqMBVHDaLMteOirNzU0F/L8Avsk9G0U5T0IAAAAASUVORK5CYII=" alt="Central Bank of India" style="height:28px;width:auto;object-fit:contain;background:white;border-radius:2px;padding:2px;"/>
+        <span>Central Bank of India</span>
+      </div>
+      <div class="bank-tile">
+        <img src="data:image/png;base64,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" alt="Punjab National Bank" style="height:28px;width:auto;object-fit:contain;background:white;border-radius:2px;padding:2px;"/>
+        <span>Punjab National Bank</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS COUNTER -->
+  <section id="stats">
+    <div class="stat-item">
+      <span class="stat-counter" data-target="5000" data-suffix="+">0</span>
+      <span class="stat-item-label">Reports Delivered</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-counter" data-target="40" data-suffix="+">0</span>
+      <span class="stat-item-label">Years of Practice</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-counter" data-target="7">0</span>
+      <span class="stat-item-label">Bank Panels</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-counter" data-target="2">0</span>
+      <span class="stat-item-label">Office Locations</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Valuations built on <em>rigour</em> and trust</h2>
+      <p>J.P. Consultants is a valuation and civil engineering firm established in 1985. Led by <strong>Er. Jai Prakash Agrawal</strong> — Chartered Engineer, B.Tech (Civil), M.I.E., F.I.V. — he is a Government Approved Valuer for both Wealth-Tax and Income-Tax, registered with C.B.D.T., Ministry of Finance, Govt. of India.</p>
+      <p>With a Fellow Life Membership of The Institution of Valuers, New Delhi, and membership of the All India Valuers Association, Kanpur, Er. Agrawal brings unmatched credentials to every valuation assignment. We are empanelled Panel Valuers with 7 leading public sector banks.</p>
+    </div>
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="about-card-title">Valuer's Registrations</div>
+        <ul class="about-list">
+          <li><strong>C.B.D.T.</strong>, Ministry of Finance, Govt. of India — Reg. 2958/73, Cat–I</li>
+          <li><strong>Wealth-Tax</strong>, Chief Commissioner of Income Tax, Lucknow — Reg. 149/88, Cat–I</li>
+          <li><strong>Fellow Life Member</strong>, The Institution of Valuers, New Delhi — F–2590/86</li>
+          <li><strong>Member</strong>, All India Valuers Association, Kanpur — AIVA/FM–107</li>
+        </ul>
+        <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+          <div class="about-card-title" style="margin-bottom:0.75rem;">Our Expertise Covers</div>
+          <ul class="about-list">
+            <li>Residential, Commercial &amp; Industrial Properties</li>
+            <li>Agricultural &amp; NA Land</li>
+            <li>NPA &amp; Distress Asset Valuation</li>
+            <li>Civil Engineering Drawing &amp; Estimates</li>
+            <li>Wealth-Tax &amp; Income-Tax Valuations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cert-badge">
+        <span>Govt.</span>
+        Approved<br/>Valuer
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header">
+      <div>
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Services tailored for <em>lenders</em></h2>
+      </div>
+      <a href="#contact" class="btn-ghost" style="color: var(--ink);">Enquire Now</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Residential Valuation</h3>
+        <p>Comprehensive market value assessments for apartments, independent houses, villas, and plots — used for home loan disbursals and mortgage registration.</p>
+        <span class="service-tag">For Home Loans</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Valuation</h3>
+        <p>In-depth analysis of office complexes, retail spaces, warehouses, and mixed-use developments for loan against property and working capital purposes.</p>
+        <span class="service-tag">For LAP & WC Loans</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌾</div>
+        <h3>Land & Agricultural</h3>
+        <p>Expert valuation of agricultural land, NA plots, and greenfield sites with complete legal encumbrance checks and FSI/FAR analysis.</p>
+        <span class="service-tag">For Project Finance</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>NPA & Distress Valuation</h3>
+        <p>Fast-track valuation of non-performing assets for recovery proceedings, SARFAESI actions, and DRT submissions — with defensible methodology.</p>
+        <span class="service-tag">For NPA Recovery</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>Technical Due Diligence</h3>
+        <p>Stage-wise construction monitoring, quality audit, and deviation reports for builder-funded projects and construction finance disbursals.</p>
+        <span class="service-tag">For Construction Finance</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Portfolio Valuation</h3>
+        <p>Bulk valuation of property portfolios for securitisation, REIT compliance, RBI audits, and internal bank risk reviews — efficiently and at scale.</p>
+        <span class="service-tag">For Bulk Requirements</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>Building Cost Estimation</h3>
+        <p>Submit your architectural map or building plan and we calculate a detailed construction cost estimate — floor-wise, item-wise — giving you a sanctionable figure that banks accept for construction loan approvals and project finance disbursals.</p>
+        <span class="service-tag">For Construction Loans</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="process-header">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">A clear, <em>transparent</em> process</h2>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Request Received</h4>
+        <p>Bank or institution submits a valuation request with property details and borrower information.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Site Inspection</h4>
+        <p>Our certified valuer conducts a physical inspection, photographs the property, and reviews legal documents.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Market Analysis</h4>
+        <p>Comparable sales and rental data is analysed to arrive at a well-supported market value conclusion.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Report Delivery</h4>
+        <p>A signed, bank-format valuation report is delivered — typically within 48–72 hours of inspection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="section-label">Why J.P. Consultants</div>
+    <h2 class="section-title">The valuation partner <em>banks</em> trust</h2>
+    <div class="why-grid">
+      <div class="why-left">
+        <p>Er. Jai Prakash Agrawal is a Chartered Engineer and Government Approved Valuer with over 40 years of practice. He holds registrations with C.B.D.T. (Ministry of Finance), Wealth-Tax (Chief Commissioner, Lucknow), and is a Fellow Life Member of The Institution of Valuers, New Delhi.</p>
+        <p style="margin-top:1rem">Panel Valuer for: Union Bank of India · Canara Bank · Punjab National Bank · Central Bank of India · Bank of Maharashtra · Bank of Baroda · Bank of India.</p>
+        <!-- Regn strip -->
+        <div class="regn-strip">
+          <div class="regn-item"><span>C.B.D.T.</span>2958/73, Cat–I</div>
+          <div class="regn-item"><span>Wealth-Tax</span>149/88, Cat–I</div>
+          <div class="regn-item"><span>FIV</span>F–2590/86</div>
+          <div class="regn-item"><span>AIVA</span>FM–107</div>
+        </div>
+      </div>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-feature-icon">⚖️</div>
+          <div class="why-feature-text">
+            <h4>Regulatory Compliance</h4>
+            <p>All reports adhere to RBI guidelines, IVS standards, and bank-specific formats.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">⚡</div>
+          <div class="why-feature-text">
+            <h4>Fast Turnaround</h4>
+            <p>Standard reports delivered in 48–72 hrs. Express service available for urgent cases.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">🎯</div>
+          <div class="why-feature-text">
+            <h4>Local Market Depth</h4>
+            <p>Deep knowledge of circle rates, guidance values, and micro-market dynamics.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">🔒</div>
+          <div class="why-feature-text">
+            <h4>Independent & Unbiased</h4>
+            <p>No conflict of interest. Our valuations are objective, signed, and legally accountable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS CTA -->
+  <section id="reviews" style="background: var(--surface); padding: 4rem 6rem; text-align: center;">
+    <div class="section-label" style="text-align:center;">Client Reviews</div>
+    <h2 class="section-title" style="max-width:100%; text-align:center; margin: 0.5rem auto 1rem;">
+      Worked with us? <em>Share your experience</em>
+    </h2>
+    <p style="color: var(--muted); font-size: 0.95rem; max-width: 500px; margin: 0 auto 2rem; line-height:1.8;">
+      Your feedback helps other banks and clients trust us. It takes less than a minute on Google.
+    </p>
+    <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank" id="google-review-btn" class="btn-primary" style="display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+      Leave a Google Review
+    </a>
+    <p style="margin-top:1rem; font-size:0.72rem; color:var(--muted); letter-spacing:0.05em;">
+      ⚠️ <em>Update this link once your Google Business Profile is set up</em>
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Request a <em>valuation</em> today</h2>
+      <p>Whether you need a single report or ongoing panel services, we're ready to assist. Fill in the form and our team will respond within one business day.</p>
+
+      <!-- TEAM -->
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="team-avatar">JPA</div>
+          <div class="team-info">
+            <div class="team-name">Er. Jai Prakash Agrawal</div>
+            <div class="team-role">Chartered Engineer · Govt. Approved Valuer · B.Tech (Civil), M.I.E., F.I.V. · Regn. 149/88, Cat–I</div>
+            <div class="team-contacts">
+              <span>📞 80095 91131</span>
+              <span>📞 9415341151</span>
+              <span>✉️ jpa2337735@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AA</div>
+          <div class="team-info">
+            <div class="team-name">Abhishek Agrawal</div>
+            <div class="team-role">Representative &amp; Field Surveyor</div>
+            <div class="team-contacts">
+              <span>📞 9208211752</span>
+              <span><a href="https://wa.me/919559682713" target="_blank" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px;"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:14px;height:14px;"/>9559682713</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <span>Branch Office</span>
+            A-18 Kamla Nehru Nagar, Khurram Nagar, Lucknow – 226 022
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🏛️</div>
+          <div class="contact-detail-text">
+            <span>Main Office</span>
+            Dwarika Bhawan (1st Floor), Opp. S.B.I. Main Branch, Bank Road, Gorakhpur – 273 001
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.123!2d80.9462!3d26.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKamla+Nehru+Nagar+Khurram+Nagar+Lucknow!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="J.P. Consultants Lucknow Office">
+        </iframe>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Send us a request</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name"/>
+        </div>
+        <div class="form-group">
+          <label>Organisation</label>
+          <input type="text" placeholder="Bank / Institution"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@bank.com"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Valuation Type</label>
+        <select>
+          <option value="">Select service...</option>
+          <option>Residential Valuation</option>
+          <option>Commercial Valuation</option>
+          <option>Land / Agricultural</option>
+          <option>NPA / Distress Valuation</option>
+          <option>Technical Due Diligence</option>
+          <option>Portfolio Valuation</option>
+          <option>Building Cost Estimation</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Property Location & Details</label>
+        <textarea placeholder="Brief description of the property and purpose of valuation..."></textarea>
+      </div>
+      <button class="form-submit" id="form-submit-btn" onclick="sendEmail(event)">Send Request</button>
+      <div id="form-status" style="margin-top:0.75rem;font-size:0.82rem;text-align:center;display:none;"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">J.P.<span>Consultants</span></div>
+    <p>© 2025 J.P. Consultants. Est. 1985. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" onclick="openAdmin(event)" style="color:var(--gold)">🔐 Staff Login</a></li>
+    </ul>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <div class="wa-float">
+    <span class="wa-float-tooltip">Chat with us on WhatsApp</span>
+    <a href="https://wa.me/919559682713" target="_blank" class="wa-float-btn" aria-label="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"/>
+    </a>
+  </div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+  <script>
+    // ── SHRINKING NAV ──
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+      document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // ── COUNTER ANIMATION ──
+    const counters = document.querySelectorAll('.stat-counter');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        let current = 0;
+        const step = Math.ceil(target / 60);
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = current + suffix;
+          if (current >= target) clearInterval(timer);
+        }, 25);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.3 });
+    counters.forEach(c => observer.observe(c));
+
+    // ── EMAILJS FORM ──
+    emailjs.init('YOUR_EMAILJS_PUBLIC_KEY'); // ← Replace with your EmailJS public key
+
+    function sendEmail(e) {
+      e.preventDefault();
+      const btn = document.getElementById('form-submit-btn');
+      const status = document.getElementById('form-status');
+      const inputs = document.querySelectorAll('.contact-form input, .contact-form select, .contact-form textarea');
+
+      // Gather values
+      const params = {
+        from_name:    inputs[0].value,
+        organisation: inputs[1].value,
+        phone:        inputs[2].value,
+        email:        inputs[3].value,
+        service:      inputs[4].value,
+        message:      inputs[5].value,
+        to_email:     'jpa2337735@gmail.com'
+      };
+
+      if (!params.from_name || !params.phone) {
+        status.style.display = 'block';
+        status.style.color = '#B91C1C';
+        status.textContent = 'Please fill in at least your name and phone number.';
+        return;
+      }
+
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params)
+        .then(() => {
+          status.style.display = 'block';
+          status.style.color = '#16a34a';
+          status.textContent = '✓ Request sent! We will contact you within one business day.';
+          btn.textContent = 'Sent ✓';
+          inputs.forEach(i => i.value = '');
+        })
+        .catch(() => {
+          status.style.display = 'block';
+          status.style.color = '#B91C1C';
+          status.textContent = 'Could not send. Please call us directly at 80095 91131.';
+          btn.textContent = 'Send Request';
+          btn.disabled = false;
+        });
+    }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       ADMIN PORTAL OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div id="admin-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:#0d0d0d;overflow:hidden">
+
+  <style>
+  #admin-overlay *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+  :root{--ar:#B91C1C;--ar2:#DC2626;--ag:#E8A020;--aink:#1A1814;--amt:#6B7280;--abg:#F5F3EF;--asf:#EDEAE3;--aw:#fff;--abr:#E5E7EB;--agr:#16A34A;--abl:#1D4ED8}
+  /* SCREENS */
+  .ascreen{display:none;height:100vh;max-height:100vh;flex-direction:column;overflow:hidden}
+  .ascreen.aactive{display:flex}
+  .alogin-wrap{display:flex;align-items:center;justify-content:center;height:100vh;overflow-y:auto;background:#0f0f0f}
+  /* LOGIN */
+  #alogout-wrap{display:none}
+
+  /* ── CLEAN LOGIN ── */
+  .alogin-box{
+    width:420px;padding:3rem 3rem 2.5rem;
+    background:#1a1a1a;border-radius:16px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 24px 64px rgba(0,0,0,0.5);
+  }
+  .alogin-logo{margin-bottom:2.5rem}
+  .alogin-logo h1{font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:0.01em}
+  .alogin-logo h1 span{color:#B91C1C}
+  .alogin-logo p{font-size:0.82rem;color:rgba(255,255,255,0.4);margin-top:0.3rem}
+  .alogin-box h2{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:0.4rem;letter-spacing:-0.02em}
+  .alogin-box .asub{font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:2rem}
+
+  .alogin-field{margin-bottom:1.25rem}
+  .alogin-field label{display:block;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem}
+  .alogin-field .ainput-wrap{position:relative}
+  .alogin-field input{
+    width:100%;background:rgba(255,255,255,0.05);
+    border:1.5px solid rgba(255,255,255,0.1);
+    border-radius:10px;padding:1rem 1.1rem;
+    font-size:1.05rem;color:#fff;outline:none;
+    transition:border-color 0.2s,background 0.2s;font-family:inherit;
+  }
+  .alogin-field input::placeholder{color:rgba(255,255,255,0.2)}
+  .alogin-field input:focus{border-color:rgba(185,28,28,0.7);background:rgba(185,28,28,0.05)}
+  .alogin-field .aicon{
+    position:absolute;left:0.9rem;top:50%;transform:translateY(-50%);
+    font-size:1rem;opacity:0.35;pointer-events:none;
+  }
+  .abtn-login{
+    width:100%;background:#B91C1C;color:#fff;border:none;
+    border-radius:10px;padding:0.9rem;font-size:0.95rem;
+    font-weight:600;cursor:pointer;transition:background 0.2s,transform 0.15s;
+    margin-top:0.5rem;letter-spacing:0.02em;font-family:inherit;
+  }
+  .abtn-login:hover{background:#DC2626;transform:translateY(-1px)}
+  .abtn-login:active{transform:translateY(0)}
+  .aerr{
+    color:#f87171;font-size:0.78rem;margin-top:0.75rem;
+    text-align:center;display:none;
+    background:rgba(185,28,28,0.1);border:1px solid rgba(185,28,28,0.25);
+    border-radius:6px;padding:0.5rem;
+  }
+  .alogin-back{
+    background:none;border:none;color:rgba(255,255,255,0.25);
+    font-size:0.75rem;cursor:pointer;width:100%;text-align:center;
+    margin-top:1.5rem;transition:color 0.2s;font-family:inherit;display:block;
+  }
+  .alogin-back:hover{color:rgba(255,255,255,0.5)}
+
+  /* ── SHARED FORM FIELDS (dashboard form) ── */
+  .aff{margin-bottom:.9rem}
+  .aff label{display:block;font-size:.72rem;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem}
+  .aff input,.aff select,.aff textarea{width:100%;border:1.5px solid #E5E7EB;border-radius:6px;padding:.6rem .8rem;font-size:.88rem;outline:none;transition:border-color .2s;font-family:inherit;background:#fff;color:#1A1814}
+  .aff input:focus,.aff select:focus,.aff textarea:focus{border-color:#B91C1C}
+  .aff input[readonly]{background:#F9FAFB;color:#6B7280}
+  .aff textarea{resize:vertical;min-height:58px}
+  .aff .acalc{background:#FFF7ED;border-color:#E8A020;font-weight:600}
+  .aff.span2{grid-column:span 2}
+  .aff.span3{grid-column:span 3}
+  /* TOPBAR */
+  .atopbar{background:#1A1814;height:52px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+  .atopbar-logo{color:#fff;font-weight:700;font-size:.95rem}
+  .atopbar-logo span{color:#E8A020}
+  .atopbar-r{display:flex;align-items:center;gap:.75rem}
+  .atopbar-user{color:rgba(255,255,255,.6);font-size:.78rem}
+  .abtn-sm2{background:rgba(255,255,255,.1);color:#fff;border:none;border-radius:4px;padding:.3rem .8rem;font-size:.75rem;cursor:pointer}
+  .abtn-sm2:hover{background:rgba(255,255,255,.2)}
+  .abtn-close-portal{background:#B91C1C;color:#fff;border:none;border-radius:4px;padding:.3rem .9rem;font-size:.75rem;cursor:pointer;font-weight:600}
+  /* DASH */
+  .adash-body{flex:1;overflow-y:auto;padding:1.5rem;background:#F5F3EF;min-height:0}
+  .adash-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+  .adash-hdr h2{font-size:1.2rem;font-weight:700}
+  .abtn-new{background:#B91C1C;color:#fff;border:none;border-radius:6px;padding:.55rem 1.1rem;font-size:.83rem;font-weight:600;cursor:pointer}
+  .abtn-new:hover{background:#DC2626}
+  .astats{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin-bottom:1.25rem}
+  .astat{background:#fff;border-radius:8px;padding:1rem;border:1px solid #E5E7EB}
+  .astat .anum{font-size:1.6rem;font-weight:700;line-height:1}
+  .astat .albl{font-size:.68rem;color:#6B7280;text-transform:uppercase;letter-spacing:.1em;margin-top:.25rem}
+  .asearch{position:relative;margin-bottom:.85rem}
+  .asearch input{width:100%;border:1.5px solid #E5E7EB;border-radius:6px;padding:.55rem .8rem .55rem 2rem;font-size:.85rem;outline:none;background:#fff}
+  .asearch input:focus{border-color:#B91C1C}
+  .asearch::before{content:'🔍';position:absolute;left:.65rem;top:50%;transform:translateY(-50%);font-size:.8rem}
+  .atbl-wrap{background:#fff;border-radius:8px;border:1px solid #E5E7EB;overflow:hidden}
+  .atbl{width:100%;border-collapse:collapse}
+  .atbl th{background:#F9FAFB;padding:.55rem .85rem;text-align:left;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#6B7280;border-bottom:1px solid #E5E7EB}
+  .atbl td{padding:.65rem .85rem;border-bottom:1px solid #F3F4F6;font-size:.82rem;vertical-align:middle}
+  .atbl tr:last-child td{border-bottom:none}
+  .atbl tr:hover td{background:#FAFAFA}
+  .abadge{display:inline-block;padding:.18rem .55rem;border-radius:20px;font-size:.67rem;font-weight:600}
+  .abadge-blue{background:#DBEAFE;color:#1D4ED8}
+  .atbl-acts{display:flex;gap:.35rem}
+  .abtn-t{border:none;border-radius:4px;padding:.25rem .6rem;font-size:.72rem;font-weight:600;cursor:pointer}
+  .abtn-edit{background:#EFF6FF;color:#1D4ED8}
+  .abtn-pdf{background:#FEF3C7;color:#92400E}
+  .abtn-del{background:#FEE2E2;color:#B91C1C}
+  .aempty{text-align:center;padding:2.5rem;color:#6B7280;font-size:.88rem}
+  /* FORM */
+  .aform-body{flex:1;overflow-y:auto;padding:1.25rem 1.5rem;background:#F5F3EF;min-height:0}
+  .aform-wrap{max-width:880px;margin:0 auto}
+  .asec{background:#fff;border-radius:8px;border:1px solid #E5E7EB;margin-bottom:1rem;overflow:hidden}
+  .asec-hd{background:#F9FAFB;padding:.65rem 1rem;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;cursor:pointer;user-select:none}
+  .asec-hd h3{font-size:.82rem;font-weight:700;color:#1A1814;text-transform:uppercase;letter-spacing:.06em}
+  .asec-hd .atog{margin-left:auto;color:#6B7280;font-size:.75rem}
+  .asec-bd{padding:1rem;display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+  .asec-bd.af1{grid-template-columns:1fr}
+  .asec-bd.af3{grid-template-columns:1fr 1fr 1fr}
+  .aftbl{width:100%;border-collapse:collapse;font-size:.78rem}
+  .aftbl th{background:#F9FAFB;padding:.45rem .55rem;text-align:left;font-size:.67rem;font-weight:700;text-transform:uppercase;color:#6B7280;border-bottom:1px solid #E5E7EB}
+  .aftbl td{padding:.35rem .45rem;border-bottom:1px solid #F3F4F6}
+  .aftbl input{width:100%;border:1.5px solid #E5E7EB;border-radius:4px;padding:.3rem .45rem;font-size:.78rem;outline:none;font-family:inherit}
+  .aftbl input:focus{border-color:#B91C1C}
+  .aftbl input[readonly]{background:#F9FAFB;color:#6B7280;font-weight:600}
+  .abtn-addfl{background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE;border-radius:4px;padding:.3rem .65rem;font-size:.72rem;font-weight:600;cursor:pointer;margin-top:.4rem}
+  .abtn-delfl{background:#FEE2E2;color:#B91C1C;border:none;border-radius:3px;padding:.22rem .45rem;font-size:.68rem;cursor:pointer}
+  .aext-tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+  .aext-tbl th{background:#F9FAFB;padding:.4rem .6rem;font-size:.67rem;font-weight:700;text-transform:uppercase;color:#6B7280;border-bottom:1px solid #E5E7EB;text-align:left}
+  .aext-tbl td{padding:.35rem .5rem;border-bottom:1px solid #F3F4F6}
+  .aext-tbl input{width:100%;border:none;background:transparent;font-size:.78rem;font-family:inherit;outline:none}
+  .aext-tbl input[type=number]{border:1.5px solid #E5E7EB;border-radius:4px;padding:.28rem .45rem;width:100px;background:#fff}
+  .asum{background:linear-gradient(135deg,#1A1814,#2d1a1a);border-radius:8px;padding:1.25rem;color:#fff;margin-top:.85rem}
+  .asum h3{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.85rem}
+  .asum-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem}
+  .asum-item .aval{font-size:1.2rem;font-weight:700;color:#E8A020}
+  .asum-item .albll{font-size:.65rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+  .asum-words{margin-top:.85rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.1);font-size:.73rem;color:rgba(255,255,255,.55);line-height:1.6}
+  </style>
+
+  <!-- LOGIN PANEL -->
+  <div id="ap-login" class="alogin-wrap">
+    <div class="alogin-box">
+      <div class="alogin-logo">
+        <h1>J.P.<span>Consultants</span></h1>
+        <p>Valuation &amp; Civil Engg. Services</p>
+      </div>
+      <h2>Staff Portal</h2>
+      <p class="asub">Sign in to access the valuation system</p>
+      <div class="alogin-field">
+        <label>Username</label>
+        <input type="text" id="au" placeholder="Enter your username" autocomplete="username"/>
+      </div>
+      <div class="alogin-field">
+        <label>Password</label>
+        <input type="password" id="ap" placeholder="Enter your password" autocomplete="current-password"/>
+      </div>
+      <button class="abtn-login" onclick="aLogin()">Sign In →</button>
+      <div class="aerr" id="aerr">⚠ Invalid username or password.</div>
+      <button class="alogin-back" onclick="closeAdmin()">← Back to Website</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="ap-dash" class="ascreen">
+    <div class="atopbar">
+      <div class="atopbar-logo">J.P.<span>Consultants</span> <span style="font-size:.7rem;font-weight:400;color:rgba(255,255,255,.4)">| Admin Portal</span></div>
+      <div class="atopbar-r">
+        <span class="atopbar-user" id="au-name"></span>
+        <button class="abtn-sm2" onclick="aLogout()">Logout</button>
+        <button class="abtn-close-portal" onclick="closeAdmin()">✕ Close Portal</button>
+      </div>
+    </div>
+    <div class="adash-body">
+      <div class="adash-hdr">
+        <h2>Valuation Reports</h2>
+        <button class="abtn-new" onclick="aNewReport()">＋ New Report</button>
+      </div>
+      <div class="astats">
+        <div class="astat"><div class="anum" id="ast-total">0</div><div class="albl">Total Reports</div></div>
+        <div class="astat"><div class="anum" id="ast-month">0</div><div class="albl">This Month</div></div>
+        <div class="astat"><div class="anum" id="ast-banks">7</div><div class="albl">Bank Panels</div></div>
+        <div class="astat"><div class="anum" id="ast-val">₹0</div><div class="albl">Total Value</div></div>
+      </div>
+      <div class="asearch"><input type="text" id="asrch" placeholder="Search by owner, bank, district, property..." oninput="aRenderTable()"/></div>
+      <div class="atbl-wrap">
+        <table class="atbl">
+          <thead><tr><th>#</th><th>Owner</th><th>Property</th><th>Bank</th><th>Date</th><th>Market Value</th><th>By</th><th>Actions</th></tr></thead>
+          <tbody id="atbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div id="ap-form" class="ascreen">
+    <div class="atopbar">
+      <h2 id="aform-title" style="color:#fff;font-size:.95rem;font-weight:600">New Valuation Report</h2>
+      <div class="atopbar-r">
+        <button class="abtn-sm2" onclick="aShowDash()">← Dashboard</button>
+        <button class="abtn-sm2" style="background:#16A34A" onclick="aSaveReport()">💾 Save</button>
+        <button class="abtn-sm2" style="background:#E8A020" onclick="aGeneratePDF()">⬇ PDF</button>
+        <button class="abtn-sm2" style="background:#6366F1" onclick="window.print()">🖨 Print</button>
+        <button class="abtn-close-portal" onclick="closeAdmin()">✕ Close</button>
+      </div>
+    </div>
+    <div class="aform-body">
+      <div class="aform-wrap">
+
+        <div class="asec">
+          <div class="asec-hd" onclick="atog(this)"><h3>📋 Cover — Report Details</h3><span class="atog">▼</span></div>
+          <div class="asec-bd">
+            <div class="aff"><label>Bank</label><select id="af-bank"><option>Union Bank of India</option><option>Canara Bank</option><option>Bank of India</option><option>Bank of Baroda</option><option>Bank of Maharashtra</option><option>Central Bank of India</option><option>Punjab National Bank</option></select></div>
+            <div class="aff"><label>Branch Name &amp; Address</label><input type="text" id="af-branch" placeholder="e.g. Nagheta Road Branch, Hardoi"/></div>
+            <div class="aff"><label>Report Date</label><input type="date" id="af-rdate"/></div>
+            <div class="aff"><label>Inspection Date</label><input type="date" id="af-idate"/></div>
+            <div class="aff"><label>Valuation Date (As On)</label><input type="date" id="af-vdate"/></div>
+            <div class="aff"><label>Purpose</label><select id="af-purpose"><option>Loan Security/ To Mortgage</option><option>Home Loan</option><option>Loan Against Property</option><option>NPA / Recovery</option><option>Construction Finance</option><option>Working Capital</option></select></div>
+          </div>
+        </div>
+
+        <div class="asec">
+          <div class="asec-hd" onclick="atog(this)"><h3>I. General Information</h3><span class="atog">▼</span></div>
+          <div class="asec-bd">
+            <div class="aff span2"><label>Owner Name(s)</label><input type="text" id="af-owner" placeholder="e.g. Smt. Savita Kanojia W/o Sri. Arvind Singh"/></div>
+            <div class="aff span2"><label>Owner Address</label><input type="text" id="af-oaddr" placeholder="R/o ..."/></div>
+            <div class="aff"><label>Ownership Type</label><select id="af-owntype"><option>Sole ownership</option><option>Joint ownership</option></select></div>
+            <div class="aff"><label>Sale Deed Details</label><input type="text" id="af-saledeed" placeholder="Sale Deed No. ... dated ..."/></div>
+            <div class="aff"><label>House Tax Receipt</label><input type="text" id="af-htax" placeholder="-"/></div>
+            <div class="aff"><label>Electric Bill</label><input type="text" id="af-ebill" placeholder="-"/></div>
+            <div class="aff span2"><label>Brief Property Description</label><textarea id="af-pdesc" placeholder="Double storied residential building on land..."></textarea></div>
+          </div>
+        </div>
+
+        <div class="asec">
+          <div class="asec-hd" onclick="atog(this)"><h3>📍 Location</h3><span class="atog">▼</span></div>
+          <div class="asec-bd">
+            <div class="aff"><label>Plot / Khasra No.</label><input type="text" id="af-plotno"/></div>
+            <div class="aff"><label>Door No.</label><input type="text" id="af-doorno" placeholder="-"/></div>
+            <div class="aff"><label>Village / Mohalla</label><input type="text" id="af-village"/></div>
+            <div class="aff"><label>Ward / Tehsil</label><input type="text" id="af-ward"/></div>
+            <div class="aff"><label>District</label><input type="text" id="af-dist"/></div>
+            <div class="aff"><label>GPS (Lat, Long)</label><input type="text" id="af-gps" placeholder="27.xxx, 80.xxx"/></div>
+            <div class="aff"><label>Postal Address</label><input type="text" id="af-postal"/></div>
+            <div class="aff"><label>Corporation / Panchayat</label><input type="text" id="af-corp"/></div>
+            <div class="aff"><label>Area Type</label><select id="af-atype"><option>Residential</option><option>Commercial</option><option>Mixed</option><option>Agricultural</option><option>Industrial</option></select></div>
+            <div class="aff"><label>Classification</label><select id="af-class"><option>Urban</option><option>Semi Urban</option><option>Rural</option></select></div>
+            <div class="aff"><label>Locality</label><select id="af-loc"><option>Higher</option><option>Middle class</option><option>Poor</option></select></div>
+            <div class="aff"><label>Road Width</label><select id="af-rwidth"><option>Below 20 Ft.</option><option>20 Ft. and above</option><option>More than 40 Ft.</option></select></div>
+            <div class="aff"><label>Road Type</label><select id="af-rtype"><option>Interlocking Road</option><option>Pucca Road</option><option>Kutcha Road</option><option>Highway</option></select></div>
+            <div class="aff"><label>Plot Type</label><select id="af-ptype"><option>Intermittent Plot</option><option>Corner plot</option></select></div>
+          </div>
+        </div>
+
+        <div class="asec">
+          <div class="asec-hd" onclick="atog(this)"><h3>🧭 Boundaries</h3><span class="atog">▼</span></div>
+          <div class="asec-bd">
+            <div class="aff"><label>East — Sale Deed</label><input type="text" id="af-be-d"/></div><div class="aff"><label>East — As per Site</label><input type="text" id="af-be-s"/></div>
+            <div class="aff"><label>West — Sale Deed</label><input type="text" id="af-bw-d"/></div><div class="aff"><label>West — As per Site</label><input type="text" id="af-bw-s"/></div>
+            <div class="aff"><label>North — Sale Deed</label><input type="text" id="af-bn-d"/></div><div class="aff"><label>North — As per Site</label><input type="text" id="af-bn-s"/></div>
+            <div class="aff"><label>South — Sale Deed</label><input type="text" id="af-bs-d"/></div><div class="aff"><label>South — As per Site</label><input type="text" id="af-bs-s"/></div>
+          </div>
+        </div>
+
+        <div class="asec">
+          <div class="asec-hd" onclick="atog(this)"><h3>Part A — Land Valuation</h3><span class="atog">▼</span></div>
+          <div class="asec-bd af3">
+            <div class="aff"><label>North (Ft.)</label><input type="number" id="af-dn" oninput="acalcLand()"/></div>
+            <div class="aff"><label>South (Ft.)</label><input type="number" id="af-ds" oninput="acalcLand()"/></div>
+            <div class="aff"><label>East (Ft.)</label><input type="number" id="af-de" oninput="acalcLand()"/></div>
+            <div class="aff"><label>West (Ft.)</label><input type="number" id="af-dw" oninput="acalcLand()"/></div>
+            <div class="aff"><label>Area (Sq.Ft.)</label><input type="number" id="af-sqft" oninput="acalcLand()"/></div>
+            <div class="aff"><label>Area (Sq.Mt.) Auto</label><input type="text" id="af-sqmt" readonly class="acalc"/></div>
+            <div class="aff"><label>Market Rate From (₹/Sq.Mt.)</label><input type="number" id="af-rfrom" oninput="acalcLand()"/></div>
+            <div class="aff"><label>Market Rate To (₹/Sq.Mt.)</label><input type="number" id="af-rto" oninput="acalcLand()"/></div>
+            <div class="aff"><label>Guideline Rate (₹/Sq.Mt.)</label><input type="number" id="af-grate" oninput="acalcLand()"/></div>
+            <div class="aff"><label>Guideline Rate w.e.f.</label><input type="date" id="af-gdate"/></div>
+            <div class="aff"><label>Adopted Rate (₹/Sq.Mt.)</label><input type="number" id="af-arate" oninput="acalcLand()"/></div>
+            <div class="aff"><label>Circle Rate Value (₹) Auto</label><input type="text" id="af-crval" readonly class="acalc"/></div>
+            <div class="aff span3"><label>Land Value (₹) Auto</label><input type="text" id="af-lval" readonly class="acalc" style="font-size:.95rem"/></div>
+          </div>
+        </div>
+
+        <div class="asec">
+          <div class="asec-hd" onclick="atog(this)"><h3>Part B — Building Valuation</h3><span class="atog">▼</span></div>
+          <div class="asec-bd">
+            <div class="aff"><label>Type of Building</label><select id="af-btype"><option>Residential</option><option>Commercial</option><option>Industrial</option></select></div>
+            <div class="aff"><label>Construction Type</label><select id="af-bconst"><option>RCC Frame Structure</option><option>Load Bearing</option><option>Steel Framed</option></select></div>
+            <div class="aff"><label>Exterior Condition</label><select id="af-econd"><option>Excellent</option><option>Good</option><option>Normal</option><option>Poor</option></select></div>
+            <div class="aff"><label>Interior Condition</label><select id="af-icond"><option>Excellent</option><option>Good</option><option>Normal</option><option>Poor</option></select></div>
+            <div class="aff"><label>Foundation</label><input type="text" id="af-found" placeholder="Isolated column footing"/></div>
+            <div class="aff"><label>Superstructure</label><input type="text" id="af-super" placeholder="9&quot; brick wall in cement mortar"/></div>
+            <div class="aff"><label>Flooring</label><input type="text" id="af-floor" placeholder="Marble/ Tiles"/></div>
+            <div class="aff"><label>Roofing</label><input type="text" id="af-roof" placeholder="RCC Roof"/></div>
+            <div class="aff"><label>Total Life (Years)</label><input type="number" id="af-tlife" value="75" oninput="acalcBldg()"/></div>
+            <div class="aff"><label>Services (%)</label><input type="number" id="af-svcpct" value="18" oninput="acalcBldg()"/></div>
+            <div class="aff span2">
+              <label>Floor-wise Details</label>
+              <table class="aftbl"><thead><tr><th>Floor</th><th>Sq.Ft.</th><th>Sq.Mt.</th><th>Height(Mt.)</th><th>Year</th><th>Age</th><th>Rate(₹/Sq.Mt.)</th><th>Repl.Cost(₹)</th><th></th></tr></thead>
+              <tbody id="afl-tbody"></tbody></table>
+              <button class="abtn-addfl" onclick="aAddFloor()">+ Add Floor</button>
+            </div>
+            <div class="aff"><label>Total Replacement Cost (₹)</label><input type="text" id="af-trc" readonly class="acalc"/></div>
+            <div class="aff"><label>Total Depreciation (₹)</label><input type="text" id="af-tdepr" readonly class="acalc"/></div>
+            <div class="aff span2"><label>Depreciated Building Value (₹)</label><input type="text" id="af-bval" readonly class="acalc" style="font-size:.95rem"/></div>
+          </div>
+        </div>
+
+        <div class="asec">
+          <div class="asec-hd" onclick="atog(this)"><h3>Parts C/D/E/F — Extra Items, Amenities &amp; Services</h3><span class="atog">▼</span></div>
+          <div class="asec-bd af1">
+            <table class="aext-tbl"><thead><tr><th>Sec.</th><th>Item</th><th>Amount (₹)</th></tr></thead><tbody id="aext-tbody"></tbody></table>
+            <div style="display:flex;gap:.4rem;margin-top:.5rem">
+              <button class="abtn-addfl" onclick="aAddExt('C','')">+ Extra (C)</button>
+              <button class="abtn-addfl" onclick="aAddExt('D','')">+ Amenity (D)</button>
+              <button class="abtn-addfl" onclick="aAddExt('E','')">+ Misc (E)</button>
+              <button class="abtn-addfl" onclick="aAddExt('F','')">+ Service (F)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="asum" id="asum-box">
+          <h3>Final Valuation Summary</h3>
+          <div class="asum-grid">
+            <div class="asum-item"><div class="aval" id="asmv">₹0</div><div class="albll">Market Value</div></div>
+            <div class="asum-item"><div class="aval" id="asrv">₹0</div><div class="albll">Realizable (90%)</div></div>
+            <div class="asum-item"><div class="aval" id="asdv">₹0</div><div class="albll">Distress (80%)</div></div>
+          </div>
+          <div class="asum-words" id="aswords"></div>
+        </div>
+
+        <div class="asec" style="margin-top:.85rem">
+          <div class="asec-hd" onclick="atog(this)"><h3>📝 Declaration Notes</h3><span class="atog">▼</span></div>
+          <div class="asec-bd af1">
+            <div class="aff"><label>Background Info</label><input type="text" id="af-dbg" placeholder="Free-hold land"/></div>
+            <div class="aff"><label>Major Factors</label><input type="text" id="af-dfact" placeholder="Shape, Size & location"/></div>
+            <div class="aff"><label>Caveats / Limitations</label><textarea id="af-dcav" placeholder="1) Legal aspects not considered..."></textarea></div>
+            <div class="aff"><label>General Remarks</label><textarea id="af-rem" placeholder="Any remarks..."></textarea></div>
+          </div>
+        </div>
+
+        <!-- PHOTOS UPLOAD -->
+        <div class="asec" style="margin-top:.85rem">
+          <div class="asec-hd" onclick="atog(this)"><h3>📷 Photos, GPS &amp; Circle Rate</h3><span class="atog">▼</span></div>
+          <div class="asec-bd af1">
+            <div class="aff">
+              <label>Property Photos (up to 6 — shown in 2-column grid on PDF)</label>
+              <input type="file" id="af-photos" accept="image/*" multiple onchange="aHandlePhotos(this)"/>
+              <div id="af-photos-preview" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.5rem"></div>
+            </div>
+            <div class="aff">
+              <label>GPS Map Screenshot</label>
+              <input type="file" id="af-gps-img" accept="image/*" onchange="aHandleSingle(this,'af-gps-preview')"/>
+              <img id="af-gps-preview" style="width:100%;margin-top:0.5rem;border-radius:4px;display:none"/>
+            </div>
+            <div class="aff">
+              <label>Circle Rate Screenshot (from Registrar's office)</label>
+              <input type="file" id="af-cr-img" accept="image/*" onchange="aHandleSingle(this,'af-cr-preview')"/>
+              <img id="af-cr-preview" style="width:100%;margin-top:0.5rem;border-radius:4px;display:none"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /admin-overlay -->
+
+  <script>
+  // ── USERS ──
+  const AUSERS={
+    'jaiprakash':{pass:'jpa@1985',name:'Er. Jai Prakash Agrawal',role:'Valuer'},
+    'abhishek':  {pass:'abhi@jp', name:'Abhishek Agrawal',       role:'Representative'},
+    'staff1':    {pass:'staff@123',name:'Staff Member 1',        role:'Staff'},
+    'staff2':    {pass:'staff@456',name:'Staff Member 2',        role:'Staff'},
+  };
+  let aCurUser=null, aEditIdx=null, aFloors=[], aExtras=[];
+  let aPhotoImgs=[], aGpsImg=null, aCrImg=null; // base64 image stores
+
+  // ── IMAGE HANDLERS ──
+  function aHandlePhotos(input){
+    aPhotoImgs=[];
+    document.getElementById('af-photos-preview').innerHTML='';
+    const files=Array.from(input.files).slice(0,6);
+    files.forEach(file=>{
+      const reader=new FileReader();
+      reader.onload=e=>{
+        aPhotoImgs.push(e.target.result);
+        const img=document.createElement('img');
+        img.src=e.target.result;
+        img.style.cssText='width:100%;border-radius:4px;object-fit:cover;height:120px';
+        document.getElementById('af-photos-preview').appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+  function aHandleSingle(input,previewId){
+    const file=input.files[0]; if(!file) return;
+    const reader=new FileReader();
+    reader.onload=e=>{
+      const prev=document.getElementById(previewId);
+      prev.src=e.target.result; prev.style.display='block';
+      if(previewId==='af-gps-preview') aGpsImg=e.target.result;
+      else aCrImg=e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function openAdmin(e){ e&&e.preventDefault(); document.getElementById('admin-overlay').style.display='block'; const saved=sessionStorage.getItem('acu'); if(saved){aCurUser=JSON.parse(saved);aShowDash();}else{document.getElementById('ap-login').style.display='flex';} }
+  function closeAdmin(){ document.getElementById('admin-overlay').style.display='none'; }
+  function aShowScreen(id){ ['ap-login','ap-dash','ap-form'].forEach(s=>{const el=document.getElementById(s); el.style.display='none'; el.classList.remove('aactive');}); const t=document.getElementById(id); t.style.display='flex'; t.classList.add('aactive'); if(id==='ap-login') document.getElementById('ap-login').style.display='flex'; }
+
+  // ── LOGIN ──
+  function aLogin(){
+    const u=document.getElementById('au').value.trim().toLowerCase();
+    const p=document.getElementById('ap').value;
+    if(AUSERS[u]&&AUSERS[u].pass===p){ aCurUser={...AUSERS[u],username:u}; sessionStorage.setItem('acu',JSON.stringify(aCurUser)); document.getElementById('aerr').style.display='none'; aShowDash(); }
+    else{ document.getElementById('aerr').style.display='block'; }
+  }
+  document.getElementById('ap').addEventListener('keydown',e=>{if(e.key==='Enter')aLogin();});
+  document.getElementById('au').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('ap').focus();});
+  function aLogout(){ aCurUser=null; sessionStorage.removeItem('acu'); aShowScreen('ap-login'); document.getElementById('ap-login').style.display='flex'; document.getElementById('au').value=''; document.getElementById('ap').value=''; }
+
+  // ── STORAGE ──
+  function aGetR(){ try{return JSON.parse(localStorage.getItem('jp_reports')||'[]');}catch(e){return[];} }
+  function aSaveR(r){ localStorage.setItem('jp_reports',JSON.stringify(r)); }
+
+  // ── DASHBOARD ──
+  function aShowDash(){
+    if(!aCurUser){aShowScreen('ap-login');return;}
+    document.getElementById('au-name').textContent=aCurUser.name+' ('+aCurUser.role+')';
+    aRenderTable(); aShowScreen('ap-dash');
+  }
+  function aRenderTable(){
+    const reports=aGetR(); const q=(document.getElementById('asrch')?.value||'').toLowerCase();
+    const filt=reports.filter(r=>!q||(r.owner||'').toLowerCase().includes(q)||(r.bank||'').toLowerCase().includes(q)||(r.district||'').toLowerCase().includes(q)||(r.propDesc||'').toLowerCase().includes(q));
+    const tb=document.getElementById('atbody');
+    tb.innerHTML=filt.length?filt.map((r,i)=>{
+      const ri=reports.indexOf(r);
+      return `<tr><td>${ri+1}</td><td><strong>${r.owner||'—'}</strong></td><td style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.propDesc||'—'}</td><td><span class="abadge abadge-blue">${r.bank||'—'}</span></td><td>${r.reportDate||'—'}</td><td><strong>₹${afmt(r.marketValue||0)}</strong></td><td>${r.createdBy||'—'}</td><td class="atbl-acts"><button class="abtn-t abtn-edit" onclick="aEditR(${ri})">Edit</button><button class="abtn-t abtn-pdf" onclick="aLoadPDF(${ri})">PDF</button><button class="abtn-t abtn-del" onclick="aDelR(${ri})">Del</button></td></tr>`;
+    }).join(''):'<tr><td colspan="8" class="aempty">No reports yet. Click "+ New Report".</td></tr>';
+    document.getElementById('ast-total').textContent=reports.length;
+    const now=new Date(),m=now.getMonth(),y=now.getFullYear();
+    document.getElementById('ast-month').textContent=reports.filter(r=>{if(!r.reportDate)return false;const d=new Date(r.reportDate);return d.getMonth()===m&&d.getFullYear()===y;}).length;
+    const tv=reports.reduce((s,r)=>s+(r.marketValue||0),0);
+    document.getElementById('ast-val').textContent='₹'+(tv/1e7).toFixed(1)+'Cr';
+  }
+  function aDelR(i){if(!confirm('Delete this report?'))return;const r=aGetR();r.splice(i,1);aSaveR(r);aRenderTable();}
+
+  // ── FORM ──
+  function aNewReport(){
+    aEditIdx=null;
+    document.getElementById('aform-title').textContent='New Valuation Report';
+    aResetForm();
+    const t=new Date().toISOString().split('T')[0];
+    document.getElementById('af-rdate').value=t;
+    document.getElementById('af-idate').value=t;
+    document.getElementById('af-vdate').value=t;
+    aFloors=[{floor:'Ground Floor (G.F.)',sqft:'',sqmt:'',height:'3.2',year:'',age:'',rate:'17325',rc:''},{floor:'First Floor (F.F.)',sqft:'',sqmt:'',height:'3.05',year:'',age:'',rate:'17325',rc:''}];
+    aExtras=[{sec:'C',item:'Porch',amt:'0'},{sec:'C',item:'Overhead water tank',amt:'0'},{sec:'D',item:'Tiles in toilet',amt:'0'},{sec:'D',item:'Extra Marble / Tile flooring',amt:'0'},{sec:'D',item:'Hand rails',amt:'0'},{sec:'F',item:'Water supply',amt:'0'},{sec:'F',item:'Compound wall/ Gate',amt:'0'}];
+    aRenderFloors();aRenderExtras();acalcAll();aShowScreen('ap-form');
+  }
+  function aEditR(i){ aEditIdx=i; const r=aGetR()[i]; document.getElementById('aform-title').textContent='Edit — '+(r.owner||''); aLoadData(r); aShowScreen('ap-form'); }
+  function aLoadPDF(i){ aEditIdx=i; aLoadData(aGetR()[i]); setTimeout(()=>aGeneratePDF(),300); }
+
+  function aResetForm(){
+    ['af-bank','af-branch','af-rdate','af-idate','af-vdate','af-purpose','af-owner','af-oaddr','af-owntype','af-saledeed','af-htax','af-ebill','af-pdesc','af-plotno','af-doorno','af-village','af-ward','af-dist','af-gps','af-postal','af-corp','af-atype','af-class','af-loc','af-rwidth','af-rtype','af-ptype','af-be-d','af-be-s','af-bw-d','af-bw-s','af-bn-d','af-bn-s','af-bs-d','af-bs-s','af-dn','af-ds','af-de','af-dw','af-sqft','af-rfrom','af-rto','af-grate','af-gdate','af-arate','af-btype','af-bconst','af-econd','af-icond','af-found','af-super','af-floor','af-roof','af-dbg','af-dfact','af-dcav','af-rem']
+    .forEach(id=>{const el=document.getElementById(id);if(el){if(el.tagName==='SELECT')el.selectedIndex=0;else el.value='';}});
+    document.getElementById('af-tlife').value='75';
+    document.getElementById('af-svcpct').value='18';
+  }
+
+  function aLoadData(r){
+    const s=(id,v)=>{const el=document.getElementById(id);if(el&&v!==undefined)el.value=v;};
+    s('af-bank',r.bank);s('af-branch',r.branch);s('af-rdate',r.reportDate);s('af-idate',r.inspectDate);s('af-vdate',r.valDate);s('af-purpose',r.purpose);
+    s('af-owner',r.owner);s('af-oaddr',r.ownerAddr);s('af-owntype',r.ownership);s('af-saledeed',r.saleDeed);s('af-htax',r.houseTax);s('af-ebill',r.elecBill);s('af-pdesc',r.propDesc);
+    s('af-plotno',r.plotNo);s('af-doorno',r.doorNo);s('af-village',r.village);s('af-ward',r.ward);s('af-dist',r.district);s('af-gps',r.gps);s('af-postal',r.postal);s('af-corp',r.corp);
+    s('af-atype',r.areaType);s('af-class',r.classification);s('af-loc',r.locality);s('af-rwidth',r.roadWidth);s('af-rtype',r.roadType);s('af-ptype',r.plotType);
+    s('af-be-d',r.bEastDeed);s('af-be-s',r.bEastSite);s('af-bw-d',r.bWestDeed);s('af-bw-s',r.bWestSite);s('af-bn-d',r.bNorthDeed);s('af-bn-s',r.bNorthSite);s('af-bs-d',r.bSouthDeed);s('af-bs-s',r.bSouthSite);
+    s('af-dn',r.dimNorth);s('af-ds',r.dimSouth);s('af-de',r.dimEast);s('af-dw',r.dimWest);s('af-sqft',r.areaSqft);s('af-rfrom',r.rateFrom);s('af-rto',r.rateTo);
+    s('af-grate',r.guidelineRate);s('af-gdate',r.guidelineDate);s('af-arate',r.adoptedRate);
+    s('af-btype',r.bldgType);s('af-bconst',r.bldgConst);s('af-econd',r.extCond);s('af-icond',r.intCond);s('af-found',r.foundation);s('af-super',r.superstructure);s('af-floor',r.flooring);s('af-roof',r.roofing);
+    s('af-tlife',r.totalLife||75);s('af-svcpct',r.servicesPct||18);
+    s('af-dbg',r.decBg);s('af-dfact',r.decFactors);s('af-dcav',r.decCaveats);s('af-rem',r.genRemarks);
+    aFloors=r.floors||[];aExtras=r.extras||[];aRenderFloors();aRenderExtras();acalcAll();
+    // Restore photos
+    aPhotoImgs=r.photos||[]; aGpsImg=r.gpsImg||null; aCrImg=r.crImg||null;
+    const pprev=document.getElementById('af-photos-preview');
+    pprev.innerHTML='';
+    aPhotoImgs.forEach(src=>{const img=document.createElement('img');img.src=src;img.style.cssText='width:100%;border-radius:4px;object-fit:cover;height:120px';pprev.appendChild(img);});
+    const gp=document.getElementById('af-gps-preview');if(aGpsImg){gp.src=aGpsImg;gp.style.display='block';}else{gp.style.display='none';}
+    const cp=document.getElementById('af-cr-preview');if(aCrImg){cp.src=aCrImg;cp.style.display='block';}else{cp.style.display='none';}
+  }
+
+  function aCollect(){
+    const g=id=>document.getElementById(id)?.value||'';
+    return {
+      id:'RPT-'+Date.now(),createdBy:aCurUser?.name||'',
+      bank:g('af-bank'),branch:g('af-branch'),reportDate:g('af-rdate'),inspectDate:g('af-idate'),valDate:g('af-vdate'),purpose:g('af-purpose'),
+      owner:g('af-owner'),ownerAddr:g('af-oaddr'),ownership:g('af-owntype'),saleDeed:g('af-saledeed'),houseTax:g('af-htax'),elecBill:g('af-ebill'),propDesc:g('af-pdesc'),
+      plotNo:g('af-plotno'),doorNo:g('af-doorno'),village:g('af-village'),ward:g('af-ward'),district:g('af-dist'),gps:g('af-gps'),postal:g('af-postal'),corp:g('af-corp'),
+      areaType:g('af-atype'),classification:g('af-class'),locality:g('af-loc'),roadWidth:g('af-rwidth'),roadType:g('af-rtype'),plotType:g('af-ptype'),
+      bEastDeed:g('af-be-d'),bEastSite:g('af-be-s'),bWestDeed:g('af-bw-d'),bWestSite:g('af-bw-s'),bNorthDeed:g('af-bn-d'),bNorthSite:g('af-bn-s'),bSouthDeed:g('af-bs-d'),bSouthSite:g('af-bs-s'),
+      dimNorth:g('af-dn'),dimSouth:g('af-ds'),dimEast:g('af-de'),dimWest:g('af-dw'),areaSqft:g('af-sqft'),rateFrom:g('af-rfrom'),rateTo:g('af-rto'),
+      guidelineRate:g('af-grate'),guidelineDate:g('af-gdate'),adoptedRate:g('af-arate'),
+      bldgType:g('af-btype'),bldgConst:g('af-bconst'),extCond:g('af-econd'),intCond:g('af-icond'),foundation:g('af-found'),superstructure:g('af-super'),flooring:g('af-floor'),roofing:g('af-roof'),
+      totalLife:g('af-tlife'),servicesPct:g('af-svcpct'),decBg:g('af-dbg'),decFactors:g('af-dfact'),decCaveats:g('af-dcav'),genRemarks:g('af-rem'),
+      floors:aFloors,extras:aExtras,
+      photos:aPhotoImgs, gpsImg:aGpsImg, crImg:aCrImg,
+      marketValue:parseFloat(document.getElementById('asmv')?.textContent?.replace(/[₹,]/g,'')||0)||0
+    };
+  }
+
+  function aSaveReport(){
+    const d=aCollect();const r=aGetR();
+    if(aEditIdx!==null&&aEditIdx>=0)r[aEditIdx]=d;else{r.unshift(d);aEditIdx=0;}
+    aSaveR(r);alert('✓ Report saved!');
+  }
+
+  // ── FLOORS ──
+  function aRenderFloors(){
+    document.getElementById('afl-tbody').innerHTML=aFloors.map((f,i)=>`
+      <tr>
+        <td><input value="${f.floor}" onchange="aFloors[${i}].floor=this.value" style="width:110px"/></td>
+        <td><input type="number" value="${f.sqft}" placeholder="0" onchange="aFloors[${i}].sqft=this.value;acalcFloor(${i})" style="width:75px"/></td>
+        <td><input type="text" value="${f.sqmt}" readonly class="acalc" style="width:70px"/></td>
+        <td><input type="number" value="${f.height}" step="0.05" onchange="aFloors[${i}].height=this.value;acalcBldg()" style="width:58px"/></td>
+        <td><input type="number" value="${f.year}" placeholder="${new Date().getFullYear()}" onchange="aFloors[${i}].year=this.value;acalcFloor(${i})" style="width:62px"/></td>
+        <td><input type="text" value="${f.age}" readonly class="acalc" style="width:38px"/></td>
+        <td><input type="number" value="${f.rate}" onchange="aFloors[${i}].rate=this.value;acalcFloor(${i})" style="width:72px"/></td>
+        <td><input type="text" value="${f.rc}" readonly class="acalc" style="width:95px"/></td>
+        <td><button class="abtn-delfl" onclick="aFloors.splice(${i},1);aRenderFloors();acalcBldg()">✕</button></td>
+      </tr>`).join('');
+  }
+  function aAddFloor(){aFloors.push({floor:'New Floor',sqft:'',sqmt:'',height:'3.0',year:'',age:'',rate:'11550',rc:''});aRenderFloors();}
+  function acalcFloor(i){
+    const f=aFloors[i];const sqmt=(parseFloat(f.sqft)||0)*0.092903;f.sqmt=sqmt.toFixed(6);
+    f.age=new Date().getFullYear()-(parseInt(f.year)||new Date().getFullYear());
+    f.rc=((sqmt)*(parseFloat(f.rate)||0)).toFixed(2);aFloors[i]=f;aRenderFloors();acalcBldg();
+  }
+
+  // ── EXTRAS ──
+  function aRenderExtras(){
+    const sc={'C':'#FFF7ED','D':'#F0FDF4','E':'#EFF6FF','F':'#FDF4FF'};
+    document.getElementById('aext-tbody').innerHTML=aExtras.map((e,i)=>`
+      <tr style="background:${sc[e.sec]||'#fff'}">
+        <td><strong>Part ${e.sec}</strong></td>
+        <td><input value="${e.item}" onchange="aExtras[${i}].item=this.value"/></td>
+        <td style="display:flex;align-items:center;gap:4px">₹<input type="number" value="${e.amt}" onchange="aExtras[${i}].amt=this.value;acalcSum()"/>
+        <button class="abtn-delfl" onclick="aExtras.splice(${i},1);aRenderExtras();acalcSum()">✕</button></td>
+      </tr>`).join('');
+  }
+  function aAddExt(sec,item){aExtras.push({sec,item:item||'New Item',amt:'0'});aRenderExtras();}
+
+  // ── CALCS ──
+  function acalcLand(){
+    const sqft=parseFloat(document.getElementById('af-sqft')?.value)||0;
+    const sqmt=sqft*0.092903;document.getElementById('af-sqmt').value=sqmt.toFixed(4);
+    const cr=parseFloat(document.getElementById('af-grate')?.value)||0;
+    const ar=parseFloat(document.getElementById('af-arate')?.value)||0;
+    document.getElementById('af-crval').value='₹ '+afmt(Math.round(sqmt*cr));
+    document.getElementById('af-lval').value='₹ '+afmt(Math.round(sqmt*ar));
+    acalcSum();
+  }
+  function acalcBldg(){
+    const tl=parseFloat(document.getElementById('af-tlife')?.value)||75;
+    const sp=(parseFloat(document.getElementById('af-svcpct')?.value)||18)/100;
+    let trc=0;aFloors.forEach(f=>{trc+=(parseFloat(f.sqmt)||0)*(parseFloat(f.rate)||0);});
+    const ws=trc*(1+sp);
+    let wa=0,ta=0;aFloors.forEach(f=>{const s=parseFloat(f.sqmt)||0,a=parseFloat(f.age)||0;wa+=s*a;ta+=s;});
+    const ag=ta>0?wa/ta:0,dr=(ag/tl)*0.9,dv=ws-dr*ws;
+    document.getElementById('af-trc').value='₹ '+afmt(Math.round(ws));
+    document.getElementById('af-tdepr').value='₹ '+afmt(Math.round(dr*ws));
+    document.getElementById('af-bval').value='₹ '+afmt(Math.round(dv));
+    acalcSum();
+  }
+  function acalcSum(){
+    const sqft=parseFloat(document.getElementById('af-sqft')?.value)||0;
+    const sqmt=sqft*0.092903;
+    const ar=parseFloat(document.getElementById('af-arate')?.value)||0;
+    const lv=sqmt*ar;
+    const tl=parseFloat(document.getElementById('af-tlife')?.value)||75;
+    const sp=(parseFloat(document.getElementById('af-svcpct')?.value)||18)/100;
+    let trc=0;aFloors.forEach(f=>{trc+=(parseFloat(f.sqmt)||0)*(parseFloat(f.rate)||0);});
+    const ws=trc*(1+sp);
+    let wa=0,ta=0;aFloors.forEach(f=>{const s=parseFloat(f.sqmt)||0,a=parseFloat(f.age)||0;wa+=s*a;ta+=s;});
+    const ag=ta>0?wa/ta:0;const dv=ws-(ag/tl)*0.9*ws;
+    let ext=0;aExtras.forEach(e=>{ext+=parseFloat(e.amt)||0;});
+    const mv=Math.round(lv+dv+ext);
+    const rv=Math.round(mv*0.9),dv2=Math.round(mv*0.8);
+    document.getElementById('asmv').textContent='₹'+afmt(mv);
+    document.getElementById('asrv').textContent='₹'+afmt(rv);
+    document.getElementById('asdv').textContent='₹'+afmt(dv2);
+    document.getElementById('aswords').innerHTML=`<strong>Market Value:</strong> (${an2w(mv)} Only)<br><strong>Realizable:</strong> (${an2w(rv)} Only)<br><strong>Distress:</strong> (${an2w(dv2)} Only)`;
+  }
+  function acalcAll(){acalcLand();acalcBldg();}
+
+  // ── TOGGLE SECTION ──
+  function atog(hd){const bd=hd.nextElementSibling,tg=hd.querySelector('.atog');if(bd.style.display==='none'){bd.style.display='';tg.textContent='▼';}else{bd.style.display='none';tg.textContent='▶';}}
+
+  // ── HELPERS ──
+  function afmt(n){return Number(n).toLocaleString('en-IN');}
+  function an2w(num){
+    if(!num)return'Zero';
+    const o=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+    const t=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+    function w(n){if(n===0)return'';if(n<20)return o[n]+' ';if(n<100)return t[Math.floor(n/10)]+' '+(n%10?o[n%10]+' ':'');return o[Math.floor(n/100)]+' Hundred '+(n%100?w(n%100):'');}
+    let r='';const cr=Math.floor(num/10000000);num%=10000000;const la=Math.floor(num/100000);num%=100000;const th=Math.floor(num/1000);num%=1000;
+    if(cr)r+=w(cr)+'Crore ';if(la)r+=w(la)+'Lac ';if(th)r+=w(th)+'Thousand ';if(num)r+=w(num);
+    return'Rupees '+r.trim();
+  }
+
+  // ── PDF — EXACT FORMAT ──
+  function aGeneratePDF(){
+    const data=aCollect();
+    const{jsPDF}=window.jspdf;
+    const doc=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+    const W=210, mg=18, cW=W-mg*2; let y=0;
+
+    // ═══════════════════════════════════════════
+    // HELPERS
+    // ═══════════════════════════════════════════
+    const np=(startY=20)=>{doc.addPage();y=startY;};
+    const chk=(need=10)=>{if(y+need>282){np();}};
+    const ln=(h=5)=>{y+=h;};
+    const T=(t,x,yy,o={})=>doc.text(String(t||''),x,yy,o);
+    const hdr=(pageNum)=>{
+      // Page header: (N) on left, J.P. CONSULTANTS on right
+      doc.setFontSize(9);doc.setFont(undefined,'normal');
+      T('('+pageNum+')',mg,y);
+      doc.setFont(undefined,'bold');doc.setFontSize(10);
+      T('J.P. CONSULTANTS',W-mg,y,{align:'right'});
+      doc.setFont(undefined,'normal');doc.setFontSize(8);
+      ln(4);T('(VALUATION & CIVIL ENGG.SERVICES)',W-mg,y,{align:'right'});
+      ln(4);
+      doc.setDrawColor(0);doc.line(mg,y,W-mg,y); // underline address
+      doc.setFontSize(8);T('Khurram Nagar, Lucknow – 226 022',W-mg,y-0.5,{align:'right'});
+      ln(3);doc.line(mg,y,W-mg,y);ln(6);
+    };
+    const field=(label,value,lx,vx,width,bold=false)=>{
+      chk(6);
+      doc.setFont(undefined,'normal');doc.setFontSize(9);
+      T(label,lx,y);
+      if(bold) doc.setFont(undefined,'bold');
+      const lines=doc.splitTextToSize(String(value||''),width||(W-vx-mg));
+      T(lines,vx,y);
+      doc.setFont(undefined,'normal');
+      ln(Math.max(lines.length*5,5));
+    };
+    const fmtDate=(d)=>{ if(!d)return''; const p=d.split('-'); return p[2]+'.'+p[1]+'.'+p[0]; };
+
+    // Calc all values
+    const sqmt=(parseFloat(data.areaSqft)||0)*0.092903;
+    const landMV=sqmt*(parseFloat(data.adoptedRate)||0);
+    const landCR=sqmt*(parseFloat(data.guidelineRate)||0);
+    let trc=0;(data.floors||[]).forEach(f=>{trc+=(parseFloat(f.sqmt)||0)*(parseFloat(f.rate)||0);});
+    const svcPct=(parseFloat(data.servicesPct)||18)/100;
+    const withSvc=trc*(1+svcPct);
+    let wa=0,ta=0;(data.floors||[]).forEach(f=>{const s=parseFloat(f.sqmt)||0,a=parseFloat(f.age)||0;wa+=s*a;ta+=s;});
+    const avgAge=ta>0?wa/ta:0,totLife=parseFloat(data.totalLife)||75;
+    const depr=(avgAge/totLife)*0.9*withSvc;
+    const bldgVal=withSvc-depr;
+    const getS=sec=>(data.extras||[]).filter(e=>e.sec===sec).reduce((s,e)=>s+(parseFloat(e.amt)||0),0);
+    const partC=getS('C'),partD=getS('D'),partE=getS('E'),partF=getS('F');
+    const totalMV=Math.round(landMV+bldgVal+partC+partD+partE+partF);
+    const totalCR=Math.round(landCR+bldgVal+partC+partD+partE+partF);
+    const mv=totalMV, rv=Math.round(mv*0.9), dv=Math.round(mv*0.8);
+
+    // ═══════════════════════════════════════════
+    // PAGE 1 — LETTERHEAD + COVER
+    // ═══════════════════════════════════════════
+    y=12;
+    // Top letterhead border lines
+    doc.setDrawColor(0);doc.setLineWidth(0.5);
+    doc.line(mg,y,W-mg,y); ln(1);
+    doc.setLineWidth(0.2);doc.line(mg,y,W-mg,y); ln(3);
+
+    // LEFT: Er. Jai Prakash Agrawal (italic)
+    doc.setFont('helvetica','bolditalic');doc.setFontSize(14);
+    T('Er. Jai Prakash Agrawal',mg,y);
+    // RIGHT: J. P. CONSULTANTS
+    doc.setFont('helvetica','bold');doc.setFontSize(18);
+    T('J. P. CONSULTANTS',W-mg,y,{align:'right'});
+    ln(5);
+    // Left credentials
+    doc.setFont('helvetica','normal');doc.setFontSize(8);
+    T('B. Tech (Civil), M.I.E., F.I.V.',mg,y);
+    // Right subtitle
+    doc.setFontSize(8);T('VALUATION & CIVIL ENGG. SERVICES',W-mg,y,{align:'right'});ln(4);
+    T('Chartered Engineer',mg,y);
+    T('DRAWING ★ESTIMATE ★CONSULTANCY',W-mg,y,{align:'right'});ln(4);
+    T('Govt. Approved Valuer',mg,y);ln(4);
+    T('(Wealth-Tax, Income-Tax)',mg,y);ln(5);
+    // Branch Office label (right)
+    doc.setFont('helvetica','bold');doc.setFontSize(8);
+    T('Branch Office:',W-mg,y,{align:'right'});ln(4);
+    doc.setFont('helvetica','normal');doc.setFontSize(8);
+    T('E-mail: jpa2337735@gmail.com',mg,y);
+    T('A-18 Kamala Nehru Nagar',W-mg,y,{align:'right'});ln(4);
+    T('Khurram Nagar, Lucknow-226 022',W-mg,y,{align:'right'});ln(4);
+    T('(M) 80095 91131 (O) 94150 63986',W-mg,y,{align:'right'});ln(3);
+
+    // Estd. 1985 (top right small)
+    doc.setFontSize(7);T('Estd.: 1985',W-mg,12,{align:'right'});
+
+    // Separator
+    doc.setLineWidth(0.3);doc.line(mg,y,W-mg,y);ln(4);
+    // PANEL VALUER line
+    doc.setFont('helvetica','bold');doc.setFontSize(8);
+    T('PANEL VALUER:',W/2,y,{align:'center'});ln(4);
+    doc.setFont('helvetica','normal');doc.setFontSize(7.5);
+    T('Union Bank of India, Canara Bank, Punjab National Bank, Central Bank of India, Bank of Maharashtra, Bank of Baroda, Bank of India',W/2,y,{align:'center'});ln(4);
+    doc.setLineWidth(0.3);doc.line(mg,y,W-mg,y);ln(3);
+    doc.setLineWidth(0.5);doc.line(mg,y,W-mg,y);ln(2);
+    // Main Office
+    doc.setFont('helvetica','bold');doc.setFontSize(8);
+    T('Main Office: ',mg,y);
+    doc.setFont('helvetica','normal');
+    T('Dwarika Bhawan (1st Floor), Opp. S.B.I. Main Branch, Bank Road, Gorakhpur – 273 001',mg+22,y);
+    ln(8);
+
+    // TO line
+    doc.setFontSize(9.5);doc.setFont('helvetica','normal');
+    T('To, '+data.bank+', '+data.branch+'.',mg,y);
+    ln(5);
+    // Date right aligned
+    doc.setFontSize(9.5);T('Date: '+fmtDate(data.reportDate),W-mg,y,{align:'right'});ln(8);
+
+    // VALUATION heading centered underlined
+    doc.setFont('helvetica','bold');doc.setFontSize(11);
+    const vtext='VALUATION';
+    T(vtext,W/2,y,{align:'center'});
+    const vtw=doc.getTextWidth(vtext);
+    doc.setLineWidth(0.3);doc.line(W/2-vtw/2,y+1,W/2+vtw/2,y+1);ln(5);
+    const vtext2='( FAIR MARKET VALUE )';
+    T(vtext2,W/2,y,{align:'center'});
+    const vtw2=doc.getTextWidth(vtext2);doc.line(W/2-vtw2/2,y+1,W/2+vtw2/2,y+1);ln(5);
+    const vtext3='OF';T(vtext3,W/2,y,{align:'center'});ln(7);
+
+    // Numbered items
+    doc.setFontSize(9.5);
+    const lx=mg+5, colon=mg+62, vx=mg+65;
+    const fld1=(num,label,val,bold=false)=>{
+      chk(10);
+      doc.setFont('helvetica','bold');T(String(num),mg,y);T(label,lx,y);T(':',colon,y);
+      doc.setFont('helvetica',bold?'bold':'normal');
+      const ls=doc.splitTextToSize(String(val||''),W-vx-mg-2);T(ls,vx,y);
+      doc.setFont('helvetica','normal');ln(Math.max(ls.length*5.5,6));
+    };
+    fld1(1,'PROPERTY',data.propDesc);ln(1);
+    fld1(2,'NAME OF OWNER',data.owner);ln(1);
+    doc.setFont('helvetica','bold');T('3',mg,y);T('PURPOSE FOR WHICH',lx,y);ln(5);
+    T('',mg,y);T('VALUATION IS MADE',lx,y);T(':',colon,y);
+    doc.setFont('helvetica','normal');T(data.purpose,vx,y);ln(6);
+    doc.setFont('helvetica','bold');T('4',mg,y);T('DATE AS ON WHICH',lx,y);ln(5);
+    T('',mg,y);T('VALUATION IS MADE',lx,y);T(':',colon,y);
+    doc.setFont('helvetica','normal');T(fmtDate(data.valDate),vx,y);ln(6);
+    // Item 5 - Valuated Amount (bold value)
+    doc.setFont('helvetica','bold');T('5',mg,y);T('VALUATED AMOUNT',lx,y);T(':',colon,y);
+    T('Rs. '+afmt(mv)+'.00',vx,y);ln(5);
+    doc.setFont('helvetica','normal');T('('+an2w(mv)+' Only)',vx,y);ln(6);
+    doc.setFont('helvetica','bold');T('6',mg,y);T('REALIZABLE VALUE',lx,y);T(':',colon,y);
+    T('Rs. '+afmt(rv)+'.00',vx,y);ln(5);
+    doc.setFont('helvetica','normal');T('('+an2w(rv)+' Only)',vx,y);ln(6);
+    doc.setFont('helvetica','bold');T('7',mg,y);T('DISTRESS VALUE',lx,y);T(':',colon,y);
+    T('Rs. '+afmt(dv)+'.00',vx,y);ln(5);
+    doc.setFont('helvetica','normal');T('('+an2w(dv)+' Only)',vx,y);ln(4);
+    // Horizontal line
+    doc.setLineWidth(0.3);doc.line(mg,y,W-mg,y);ln(4);
+
+    // Index of Contents (right side) + Valuer's Registration (left side)
+    const iy=y;
+    // Right: Index
+    doc.setFont('helvetica','bold');doc.setFontSize(8.5);
+    T('INDEX OF CONTENTS',W/2+10,y);T('PAGES',W-mg-5,y);ln(5);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    T("Valuer's Report",W/2+10,y);T('02-0'+(7+Math.ceil((aPhotoImgs.length?1:0)+(aGpsImg?1:0))),W-mg-5,y);ln(5);
+    T('Photo/ GPS Map/ CR',W/2+10,y);T((8+Math.ceil((aPhotoImgs.length?1:0)))+'+'+(aGpsImg||aCrImg?'1':''),W-mg-5,y);ln(8);
+
+    // Left: Valuer's Registration
+    const ry=iy;
+    doc.setFont('helvetica','bold');doc.setFontSize(8.5);
+    T("VALUER'S REGISTRATION",mg,ry);
+    doc.line(mg,ry+1,mg+doc.getTextWidth("VALUER'S REGISTRATION"),ry+1);
+    T('Nos.',mg+90,ry);doc.line(mg+90,ry+1,mg+90+doc.getTextWidth('Nos.'),ry+1);
+    let ry2=ry+5;
+    const regs=[
+      ['1','C.B.D.T, Ministry of Finance, Govt. of India, New Delhi.','2958/73, Cat – I'],
+      ['2','WEALTH-TAX, Chief Commissioner of Income Tax, Lucknow.','149/88, Cat – I'],
+      ['3','Fellow Life Member of THE INSTITUTION OF VALUERS, New Delhi.','F–2590/ 86'],
+      ['4','Member of All India Valuers Association, Kanpur','AIVA/ FM - 107'],
+    ];
+    doc.setFontSize(8);
+    regs.forEach(r=>{
+      doc.setFont('helvetica','normal');T(r[0],mg,ry2);
+      const ls=doc.splitTextToSize(r[1],68);T(ls,mg+5,ry2);
+      T(r[2],mg+75,ry2);ry2+=Math.max(ls.length*4.5,6);
+    });
+    // Adjust y to below both columns
+    y=Math.max(y,ry2)+4;
+    doc.setLineWidth(0.3);doc.line(mg,y,W-mg,y);ln(5);
+    // Signature block
+    doc.setFont('helvetica','bold');doc.setFontSize(9);
+    T('(ER. JAI PRAKASH AGRAWAL)',W-mg,y,{align:'right'});ln(5);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    T('Govt. Approved Valuer',W-mg,y,{align:'right'});ln(4);
+    T('Regn. No. 149/88, Cat - I',W-mg,y,{align:'right'});
+
+    // ═══════════════════════════════════════════
+    // PAGE 2 — SECTION I GENERAL
+    // ═══════════════════════════════════════════
+    np();hdr(2);
+    doc.setFont('helvetica','bold');doc.setFontSize(10);
+    T('I.       GENERAL',mg,y);ln(7);
+    doc.setFontSize(9);
+    const f2=(num,label,val,sub='')=>{
+      chk(8);
+      doc.setFont('helvetica','bold');T(num,mg,y);T(label,mg+8,y);T(':',mg+72,y);
+      doc.setFont('helvetica','normal');
+      const ls=doc.splitTextToSize(String(val||''),W-mg-82);T(ls,mg+75,y);
+      ln(Math.max(ls.length*5,5));
+      if(sub){doc.setFontSize(8);T(sub,mg+75,y);doc.setFontSize(9);ln(5);}
+    };
+    f2('1','Purpose for which valuation is made',data.purpose);ln(1);
+    doc.setFont('helvetica','bold');T('2',mg,y);T('a) Date of inspection',mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T(fmtDate(data.inspectDate),mg+75,y);ln(5);
+    doc.setFont('helvetica','bold');T('','mg',y);T('b) Date as on which valuation is made',mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T(fmtDate(data.valDate),mg+75,y);ln(6);
+    doc.setFont('helvetica','bold');T('3',mg,y);T('List of documents produced for Perusal',mg+8,y);ln(5);
+    doc.setFont('helvetica','normal');T('i) Details of '+( data.saleDeed&&data.saleDeed.toLowerCase().includes('tsr')?'Title Search Report (TSR)':'Sale Deed'),mg+8,y);T(':',mg+72,y);T(data.saleDeed||'-',mg+75,y);ln(5);
+    T('ii) Sale Deed',mg+8,y);T(':',mg+72,y);T(data.houseTax||'-',mg+75,y);ln(5);
+    T('iii) Electric Bill',mg+8,y);T(':',mg+72,y);T(data.elecBill||'-',mg+75,y);ln(6);
+    doc.setFont('helvetica','bold');T('4',mg,y);T('Name of the owner and his/ their address',mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T(data.owner,mg+75,y);ln(5);
+    T('(as) with Phone No.',mg+8,y);
+    const olines=doc.splitTextToSize(data.ownerAddr||'',W-mg-83);T(olines,mg+75,y);ln(Math.max(olines.length*5,5));
+    doc.setFontSize(8.5);T('(Details of share of each owner in case of joint ownership)',mg+8,y);T(':',mg+72,y);
+    doc.setFontSize(9);T(data.ownership||'Sole ownership',mg+75,y);ln(7);
+    f2('5','Brief  Description of the property',data.propDesc);ln(1);
+    doc.setFont('helvetica','bold');T('6',mg,y);T('Location of the property',mg+8,y);ln(6);
+    const loc=[['a)','Plot No./ Survey No.',data.plotNo],['b)','Door No.',data.doorNo||'-'],['c)','T.S. No./ Village',data.village],['d)','Ward/ Taluka/ Tahsil',data.ward],['e)','Mandal/ District',data.district]];
+    loc.forEach(l=>{doc.setFont('helvetica','normal');T(l[0],mg+8,y);T(l[1],mg+14,y);T(':',mg+72,y);T(l[2]||'-',mg+75,y);ln(5);});ln(1);
+    f2('7','Postal address of the property',data.postal);ln(1);
+    doc.setFont('helvetica','bold');T('8',mg,y);T('City/ Town',mg+8,y);ln(5);
+    doc.setFont('helvetica','normal');T('Residential Area',mg+8,y);T(':',mg+72,y);T(data.areaType==='Residential'?'Yes':'No',mg+75,y);ln(5);
+    T('Commercial Area',mg+8,y);T(':',mg+72,y);T(data.areaType==='Commercial'?'Yes':'No',mg+75,y);ln(5);
+    T('Industrial Area',mg+8,y);T(':',mg+72,y);T(data.areaType==='Industrial'?'Yes':'No',mg+75,y);ln(6);
+    doc.setFont('helvetica','bold');T('9',mg,y);T('Classification of area',mg+8,y);ln(5);
+    doc.setFont('helvetica','normal');T('i) Higher/ Middle / Poor',mg+8,y);T(':',mg+72,y);T(data.locality,mg+75,y);ln(5);
+    T('ii) Urban/ Semi-Urban/ Rural',mg+8,y);T(':',mg+72,y);T(data.classification,mg+75,y);ln(6);
+    f2('10','Coming under Corporation limit/ village Panchayat/ Municipality.',data.corp||'N.A.');ln(1);
+    chk(12);doc.setFont('helvetica','bold');T('11',mg,y);
+    const q11=doc.splitTextToSize('Whether covered under any State / Central Govt. enactments (e.g. Urban Land Ceiling Act) or notified under agency area / scheduled area / cantonment area',60);
+    T(q11,mg+8,y);T(':',mg+72,y);doc.setFont('helvetica','normal');T('N.A.',mg+75,y);ln(q11.length*5+2);
+    f2('12','In case it is an agricultural land any conversion to house site plots is contemplated.','-');
+
+    // ═══════════════════════════════════════════
+    // PAGE 3 — BOUNDARIES + CHARACTERISTICS
+    // ═══════════════════════════════════════════
+    np();hdr(3);
+    // Boundaries
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('13',mg,y);
+    T('Boundaries of property As per Legal Report:',mg+8,y);
+    T('Boundaries of property As per Site:',W/2+5,y);ln(6);
+    [['North',data.bNorthDeed,data.bNorthSite],['South',data.bSouthDeed,data.bSouthSite],['East',data.bEastDeed,data.bEastSite],['West',data.bWestDeed,data.bWestSite]].forEach(b=>{
+      doc.setFont('helvetica','normal');T(b[0]+':',mg+8,y);T(b[1]||'-',mg+22,y);T(b[2]||'-',W/2+5,y);ln(5);
+    });ln(2);
+    // Dimensions
+    doc.setFont('helvetica','bold');T('14',mg,y);T('Dimensions of the plot',mg+8,y);
+    T('(A) As per Legal Report',mg+65,y);T('(B) As per Site',W/2+20,y);ln(5);
+    doc.setFont('helvetica','normal');
+    [['North',data.dimNorth,data.dimNorth],['South',data.dimSouth,data.dimSouth],['East',data.dimEast,data.dimEast],['West',data.dimWest,data.dimWest]].forEach(d=>{
+      T(d[0]+' :',mg+8,y);T((d[1]||'0.00')+' Ft.',mg+65,y);T((d[2]||'0.00')+' Ft.',W/2+20,y);ln(5);
+    });
+    T('a) Extent of the site :',mg+8,y);
+    T((data.areaSqft||'0')+' Sq.Ft.',mg+65,y);T((data.areaSqft||'0')+' Sq.Ft.',W/2+20,y);ln(5);
+    T('',mg+8,y);T(sqmt.toFixed(2)+' Sq.Mt.',mg+65,y);T(sqmt.toFixed(3)+' Sq.Mt.',W/2+20,y);ln(5);
+    T('b) Latitude, Longitude and Coordinates of the :',mg+8,y);T(data.gps||'',W/2+5,y);ln(6);
+    doc.setFont('helvetica','bold');T('15',mg,y);T('Extent of site as per Legal Report',mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T((data.areaSqft||'0')+' Sq.Ft. = '+sqmt.toFixed(2)+' Sq.Mt.',mg+75,y);ln(5);
+    doc.setFont('helvetica','bold');T('16',mg,y);T('Extent of the site considered for valuation',mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T((data.areaSqft||'0')+' Sq.Ft. = '+sqmt.toFixed(2)+' Sq.Mt.',mg+75,y);ln(5);
+    doc.setFont('helvetica','bold');T('17',mg,y);T('Whether occupied by the owner/ tenanted?',mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T('In posession of owner',mg+75,y);ln(5);
+    T('a) Since how long',mg+8,y);T(':',mg+72,y);T('N.A.',mg+75,y);ln(5);
+    T('b) Rent received per month',mg+8,y);T(':',mg+72,y);T('N.A.',mg+75,y);ln(8);
+    // Section II
+    doc.setFont('helvetica','bold');doc.setFontSize(10);T('II.    CHARACTERISTICS OF THE SITE',mg,y);ln(7);
+    doc.setFontSize(9);
+    const chars=[['1','Classification of the locality.',data.locality],['2','Development of surrounding areas.',data.areaType||'Residential'],['3','Possibility of frequent flooding','No'],['4','Feasibility to the civic amenities like School, Hospital, Bus Stop, Market etc.','Available nearby'],['5','Level of land with topographical conditions','Leveled'],['6','Shape of land','Rectangular'],['7','Type of use to which it can be put','Residential'],['8','Any usage restriction','No'],['9','Is plot in Town Planning approved layout?','No'],['10','Corner plot or Intermittent plot?',data.plotType||'Intermittent Plot'],['11','Road facilities','Available'],['12','Type of road available at present',data.roadType||''],['13','Width of road- is it below 20 Ft. or more than 20 Ft.',data.roadWidth||''],['14','Is it a land locked land?','No'],['15','Water potentially.','Ground water'],['16','Underground sewerage system.','No'],['17','Power supply is available in the site.','Yes'],['18','Advantages of the site','None'],['19','Special remarks, if any','None']];
+    chars.forEach(c=>{
+      chk(7);doc.setFont('helvetica','bold');T(c[0],mg,y);T(c[1],mg+8,y);T(':',mg+72,y);
+      doc.setFont('helvetica','normal');const ls=doc.splitTextToSize(c[2],W-mg-82);T(ls,mg+75,y);ln(Math.max(ls.length*5,5));
+    });
+
+    // ═══════════════════════════════════════════
+    // PAGE 4 — PART A LAND + PART B BUILDING
+    // ═══════════════════════════════════════════
+    np();hdr(4);
+    doc.setFont('helvetica','bold');doc.setFontSize(10);T('PART-A (VALUATION OF LAND)',mg,y);ln(7);
+    doc.setFontSize(9);
+    T('1',mg,y);doc.setFont('helvetica','normal');T('Size of plot',mg+8,y);T(':',mg+72,y);T((data.areaSqft||'0')+' Sq.Ft.',mg+75,y);ln(5);
+    doc.setFont('helvetica','normal');T('North & South :',mg+8,y);T((data.dimNorth||'0.00')+' Ft.',mg+40,y);T('Please refer Page No.03',W/2,y);ln(5);
+    T('East & West :',mg+8,y);T((data.dimEast||'0.00')+' Ft.',mg+40,y);T('Sl. No.14',W/2,y);ln(5);
+    doc.setFont('helvetica','bold');T('2',mg,y);doc.setFont('helvetica','normal');T('Total extent of the plot',mg+8,y);T(':',mg+72,y);T((data.areaSqft||'0')+' Sq.Ft. = '+sqmt.toFixed(3)+' Sq.Mt.',mg+75,y);ln(5);
+    doc.setFont('helvetica','bold');T('3',mg,y);
+    const q3=doc.splitTextToSize('Prevailing market rate (Along with details /reference of atleast two latest deals/transactions with respect to adjacent properties in the areas)',60);
+    T(q3,mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T((data.rateFrom||'')+ ' To '+(data.rateTo||'')+' Sq.Mt.',mg+75,y);ln(Math.max(q3.length*5,10));
+    doc.setFont('helvetica','bold');T('4a',mg,y);
+    const q4=doc.splitTextToSize("Guideline rate obtained from Registrar's office (an evidence thereof to be enclosed)",60);
+    T(q4,mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T((data.guidelineRate||'')+' /- Sq.Mt. w.e.f. '+fmtDate(data.guidelineDate),mg+75,y);ln(Math.max(q4.length*5,8));
+    doc.setFont('helvetica','bold');T('4b',mg,y);doc.setFont('helvetica','normal');T('Value as per GLR/ DM Circle rate',mg+8,y);T(':',mg+72,y);T('Rs. '+landCR.toFixed(2),mg+75,y);ln(5);
+    doc.setFont('helvetica','bold');T('5',mg,y);doc.setFont('helvetica','normal');T('Assessed/ adopted rate of valuation',mg+8,y);T(':',mg+72,y);T((data.adoptedRate||'')+' /- Sq.Mt.',mg+75,y);ln(5);
+    doc.setFont('helvetica','bold');T('6',mg,y);doc.setFont('helvetica','normal');T('Estimated value of land',mg+8,y);T(':',mg+72,y);T('Rs. '+landMV.toFixed(2),mg+75,y);ln(8);
+
+    // PART B
+    doc.setFont('helvetica','bold');doc.setFontSize(10);T('PART - B (Valuation of Building)',mg,y);ln(7);
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('1. TECHNICAL DETAILS OF BUILDING :',mg,y);ln(6);
+    doc.setFont('helvetica','normal');T('a) Type of building',mg+8,y);T(':',mg+72,y);T(data.bldgType,mg+75,y);ln(5);
+    doc.setFontSize(8);T('(Residential/ Commercial/ Industrial)',mg+8,y);ln(5);doc.setFontSize(9);
+    // Floor year/age headers
+    const floorNames=(data.floors||[]).map(f=>f.floor.replace('Ground Floor','G.F.').replace('First Floor','F.F.').replace('Second Floor','S.F.').replace('Third Floor','T.F.').split('(').pop().replace(')','').trim());
+    doc.setFont('helvetica','bold');T('b) Type of construction',mg+8,y);T(':',mg+72,y);
+    doc.setFont('helvetica','normal');T(data.bldgConst,mg+75,y);ln(5);
+    doc.setFontSize(8);T('(Load bearing/ RCC/ Steel/ steel framed)',mg+8,y);ln(5);doc.setFontSize(9);
+    // Year row
+    doc.setFont('helvetica','bold');T('c) Year of construction',mg+8,y);T(':',mg+72,y);
+    let cx2=mg+75;(data.floors||[]).forEach(f=>{doc.setFont('helvetica','normal');T(f.year||'',cx2,y);cx2+=18;});ln(5);
+    doc.setFont('helvetica','normal');T('i) Hence average age of building adopted :',mg+8,y);
+    cx2=mg+75;let hasAge=false;(data.floors||[]).forEach(f=>{T(f.age||'',cx2,y);cx2+=18;hasAge=true;});if(hasAge){T('Yrs.',cx2,y);}ln(5);
+    T('ii) Residual Life of building',mg+8,y);T(':',mg+72,y);
+    cx2=mg+75;(data.floors||[]).forEach(f=>{T(String(Math.max(0,(totLife-(parseFloat(f.age)||0)))),cx2,y);cx2+=18;});T('Yrs.',cx2,y);ln(5);
+    doc.setFont('helvetica','bold');T('d) Number of floors & height of each floor',mg+8,y);ln(5);
+    T('including basement, if any',mg+8,y);T('height in Mt. =',mg+50,y);
+    doc.setFont('helvetica','normal');cx2=mg+75;(data.floors||[]).forEach(f=>{T(f.height||'',cx2,y);cx2+=18;});ln(5);
+    doc.setFont('helvetica','bold');T('e) Plinth area floor-wise',mg+8,y);T('in Sqmt. =',mg+55,y);
+    doc.setFont('helvetica','normal');cx2=mg+75;(data.floors||[]).forEach(f=>{T(parseFloat(f.sqmt||0).toFixed(2),cx2,y);cx2+=18;});ln(5);
+    doc.setFont('helvetica','bold');T('f) Condition of the building',mg+8,y);ln(5);
+    doc.setFont('helvetica','normal');T('i) Exterior-Excellent, Good, Normal, Poor',mg+8,y);T(':',mg+72,y);T(data.extCond,mg+75,y);ln(5);
+    T('ii) Interior-Excellent, Good, Normal, Poor',mg+8,y);T(':',mg+72,y);T(data.intCond,mg+75,y);ln(5);
+    T('g) Date of issue and validity of layout of approved map / plan',mg+8,y);T(':',mg+72,y);T('N.A. as approved Map is not available with owner',mg+75,y);ln(5);
+    T('h) Approved map / plan issuing authority',mg+8,y);T(':',mg+72,y);T('Prescribed Authority',mg+75,y);ln(5);
+    T('i) Whether genuineness or authenticity of approved map / plan is verified',mg+8,y);T(':',mg+72,y);T('No, however lawyer to be advised.',mg+75,y);ln(5);
+    const q_ii=doc.splitTextToSize('ii) Any other comments by our empanelled valuers on authentic of approved plan.',60);
+    T(q_ii,mg+8,y);T(':',mg+72,y);T('In absence of approved map, permissible covered',mg+75,y);ln(5);T('area i.e 65% of the plot area has been adopted in this report.',mg+75,y);ln(6);
+
+    // Specifications table
+    doc.setFont('helvetica','bold');doc.setFontSize(8.5);T('SPECIFICATIONS OF CONSTRUCTION (FLOOR-WISE) IN RESPECT OF:',mg,y);ln(5);
+    // Table header
+    const specCols=[mg,mg+6,mg+60,mg+85,mg+115,mg+145];
+    doc.setFillColor(230,230,230);doc.rect(mg,y-3,cW,5,'F');
+    T('S.No.',specCols[0],y);T('Description',specCols[1],y);
+    const fn2=(data.floors||[]).map(f=>f.floor.includes('Ground')?'Ground Floor':f.floor.includes('First')?'First Floor':f.floor.includes('Second')?'Second Floor':f.floor.includes('Third')?'Third Floor':f.floor);
+    if(fn2[0])T(fn2[0],specCols[2],y);if(fn2[1])T(fn2[1],specCols[3],y);if(fn2[2])T(fn2[2],specCols[4],y);
+    ln(6);doc.setLineWidth(0.2);doc.line(mg,y-1,W-mg,y-1);
+    const specs=[['1','Foundation',data.foundation||'Isolated column footing','-','-'],['2','Basement','N.A.','-','-'],['3','Superstructure',data.superstructure||'9" & 4.5" thick brick wall in cement mortar in all floor','',''],['4','Joinery/ Doors & windows','Wooden joinery','Wooden joinery','Wooden joinery'],['5','RCC works','Yes','Yes','Yes'],['6','Plastering','Yes','Yes','Yes'],['7','Flooring, skirting, dadoing',data.flooring||'Marble/ Tiles',data.flooring||'Marble/ Tiles',data.flooring||'Marble/ Tiles'],['8','Special finish as marble, granite,','Granite in Kitchen','Granite','Granite'],['9','Roofing including weather proof course',data.roofing||'RCC Roof',data.roofing||'RCC Roof',data.roofing||'RCC Roof'],['10','Drainage','-','-','-']];
+    doc.setFont('helvetica','normal');doc.setFontSize(8);
+    specs.forEach(s=>{
+      chk(6);T(s[0],specCols[0],y);
+      const ls=doc.splitTextToSize(s[1],50);T(ls,specCols[1],y);
+      T(s[2]||'-',specCols[2],y);if(s[3]!==undefined)T(s[3],specCols[3],y);if(s[4]!==undefined)T(s[4],specCols[4],y);
+      ln(Math.max(ls.length*4.5,5));
+    });
+
+    // ═══════════════════════════════════════════
+    // PAGE 5 — COMPOUND WALL, ELEC, PLUMBING, VALUATION TABLE
+    // ═══════════════════════════════════════════
+    np();hdr(5);
+    // Compound wall
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('1',mg,y);T('Description',mg+8,y);
+    const fn3=(data.floors||[]).map(f=>f.floor.includes('Ground')?'Ground Floor':f.floor.includes('First')?'First Floor':f.floor.includes('Second')?'Second Floor':'');
+    if(fn3[0])T(fn3[0],mg+60,y);if(fn3[1])T(fn3[1],mg+90,y);if(fn3[2])T(fn3[2],mg+120,y);ln(5);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    ['Compound wall','Height','Length','Type of construction'].forEach(lbl=>{
+      T(lbl,mg+8,y);T('N.A.',mg+60,y);T('-',mg+90,y);T('-',mg+120,y);ln(5);
+    });ln(2);
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('2',mg,y);T('ELECTRICAL INSTALLATION',mg+8,y);ln(6);
+    const elec=[['a) Type of wiring','Concealed'],['b) Class of fittings, (Superior/ Good/ Poor)','Good'],['c) Number of light points','Yes'],['d) Fan points','Yes'],['e) Spare plug points','Yes'],['f) Any other item','Yes']];
+    doc.setFont('helvetica','normal');
+    elec.forEach(e=>{T(e[0],mg+8,y);T(':',mg+72,y);T(e[1],mg+75,y);if(fn3[1])T(e[1],mg+95,y);if(fn3[2])T(e[1],mg+115,y);ln(5);});ln(2);
+    doc.setFont('helvetica','bold');T('3',mg,y);T('PLUMBING INSTALLATION',mg+8,y);ln(6);
+    const plumb=[['a) No. of water closets and their Type','Yes'],['b) No. of wash basins','Yes'],['c) No. of urinals','Nil'],['d) No. of bath tubs','Nil'],['e) Water meter, taps, etc.','Nil'],['f) Any other fixtures','Nil']];
+    doc.setFont('helvetica','normal');
+    plumb.forEach(p=>{T(p[0],mg+8,y);T(':',mg+72,y);T(p[1],mg+75,y);if(fn3[1])T(p[1],mg+95,y);if(fn3[2])T(p[1],mg+115,y);ln(5);});ln(3);
+
+    // VALUATION TABLE
+    doc.setFont('helvetica','bold');doc.setFontSize(8.5);
+    T('DETAILS OF VALUATION: (Depreciation calculated, assuming 10% salvage value)',mg,y);ln(5);
+    // Table headers
+    doc.setFillColor(220,220,220);doc.rect(mg,y-3,cW,5,'F');
+    const vc=[mg,mg+7,mg+25,mg+45,mg+58,mg+72,mg+98,mg+128,mg+158];
+    T('Sl.',vc[0],y);T('Parti-',vc[1],y);T('Plinth',vc[2],y);T('Height',vc[3],y);T('Age of',vc[4],y);T('Esti. Rate of',vc[5],y);T('Replacement',vc[6],y);T('Depreciation',vc[7],y);T('Depreciated',vc[8],y);ln(4);
+    T('',vc[0],y);T('culars',vc[1],y);T('Area in',vc[2],y);T('(Mt.)',vc[3],y);T('building',vc[4],y);T('replacement',vc[5],y);T('Cost',vc[6],y);T('',vc[7],y);T('Value',vc[8],y);ln(4);
+    T('',vc[0],y);T('',vc[1],y);T('(Sq.Mt.)',vc[2],y);ln(4);doc.line(mg,y-1,W-mg,y-1);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    let rcTotal=0;
+    (data.floors||[]).forEach((f,i)=>{
+      const fn=f.floor.includes('Ground')?'G.F.':f.floor.includes('First')?'F.F.':f.floor.includes('Second')?'S.F.':f.floor.includes('Third')?'T.F.':f.floor.substring(0,4);
+      const rc=(parseFloat(f.sqmt)||0)*(parseFloat(f.rate)||0);rcTotal+=rc;
+      T(String(i+1),vc[0],y);T(fn,vc[1],y);T(parseFloat(f.sqmt||0).toFixed(2),vc[2],y);T(f.height||'',vc[3],y);T(String(f.age||''),vc[4],y);T((parseFloat(f.rate)||0).toFixed(2),vc[5],y);T(rc.toFixed(2),vc[6],y);ln(5);
+    });
+    ln(1);doc.setDrawColor(0);doc.line(mg,y-1,W-mg,y-1);
+    T('',vc[0],y);T('',vc[1],y);T('',vc[2],y);T('',vc[3],y);T('',vc[4],y);T('',vc[5],y);T(rcTotal.toFixed(2),vc[6],y);ln(5);
+    T('Add for services @ '+data.servicesPct+'%',mg+8,y);T((rcTotal*svcPct).toFixed(2),vc[6],y);ln(5);
+    doc.setFont('helvetica','bold');T('TOTAL',mg+8,y);
+    doc.setFont('helvetica','normal');T(withSvc.toFixed(2),vc[6],y);T(depr.toFixed(2),vc[7],y);T(bldgVal.toFixed(2),vc[8],y);ln(6);
+
+    // PART C
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('PART - C (Extra Items)',mg,y);T('Amount (in Rs.)',W-mg,y,{align:'right'});ln(5);doc.line(mg,y-1,W-mg,y-1);
+    doc.setFont('helvetica','normal');
+    const partCItems=(data.extras||[]).filter(e=>e.sec==='C');
+    const defaultC=[['Porch',0],['Ornamental Front Door',0],['Sit out/ Verandah with steel grills',0],['Overhead water tank',0],['Extra steel/ collapsible gates',0]];
+    const cItems=partCItems.length?partCItems.map(e=>[e.item,parseFloat(e.amt)||0]):defaultC;
+    cItems.forEach((it,i)=>{T(String(i+1),mg,y);T(it[0],mg+6,y);T(':',mg+72,y);T('Rs. '+(it[1]||0).toFixed(2),W-mg,y,{align:'right'});ln(5);});
+    doc.setFont('helvetica','bold');T('TOTAL',mg+72,y);T(':',mg+86,y);T('Rs. '+partC.toFixed(2),W-mg,y,{align:'right'});ln(6);
+
+    // PART D
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('PART - D (Amenities)',mg,y);T('Amount (in Rs.)',W-mg,y,{align:'right'});ln(5);doc.line(mg,y-1,W-mg,y-1);
+    doc.setFont('helvetica','normal');
+    const partDItems=(data.extras||[]).filter(e=>e.sec==='D');
+    const defaultD=[['Wardrobes',0],['Glazed Tiles',0],['Extra sinks and bath tubs',0],['Marble / Ceramic Tiles flooring',0],['Interior decorations',0],['Architectural elevation works',0],['Paneling works',0],['Alumminiun works',0],['Steel Hand rails in stair & Balcony',0],['False ceiling/POP',0]];
+    const dItems=partDItems.length?partDItems.map(e=>[e.item,parseFloat(e.amt)||0]):defaultD;
+    dItems.forEach((it,i)=>{T(String(i+1),mg,y);T(it[0],mg+6,y);T(':',mg+72,y);T('Rs. '+(it[1]||0).toFixed(2),W-mg,y,{align:'right'});ln(5);});
+    doc.setFont('helvetica','bold');T('TOTAL',mg+72,y);T(':',mg+86,y);T('Rs. '+partD.toFixed(2),W-mg,y,{align:'right'});ln(3);
+
+    // ═══════════════════════════════════════════
+    // PAGE 6 — PART E, F, ABSTRACT, CONCLUSION
+    // ═══════════════════════════════════════════
+    np();hdr(6);
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('PART - E (Miscellaneous)',mg,y);T('Amount (in Rs.)',W-mg,y,{align:'right'});ln(5);doc.line(mg,y-1,W-mg,y-1);
+    const partEItems=(data.extras||[]).filter(e=>e.sec==='E');
+    const defaultE=[['Seprate toilet room',0],['Seprate limber room',0],['Seprate water tank/ sump',0],['Trees, gardening',0]];
+    const eItems=partEItems.length?partEItems.map(e=>[e.item,parseFloat(e.amt)||0]):defaultE;
+    doc.setFont('helvetica','normal');
+    eItems.forEach((it,i)=>{T(String(i+1),mg,y);T(it[0],mg+6,y);T(':',mg+72,y);T('Rs. '+(it[1]||0).toFixed(2),W-mg,y,{align:'right'});ln(5);});
+    doc.setFont('helvetica','bold');T('TOTAL',mg+72,y);T(':',mg+86,y);T('Rs. '+partE.toFixed(2),W-mg,y,{align:'right'});ln(6);
+
+    doc.setFont('helvetica','bold');T('PART - F (Services)',mg,y);T('Amount (in Rs.)',W-mg,y,{align:'right'});ln(5);doc.line(mg,y-1,W-mg,y-1);
+    const partFItems=(data.extras||[]).filter(e=>e.sec==='F');
+    const defaultF=[['Water supply arran.',0],['Drainage arrangements',0],['Compound wall/ Gate',0],['C.B. Deposits, fittings, etc.',0],['Pavement',0]];
+    const fItems=partFItems.length?partFItems.map(e=>[e.item,parseFloat(e.amt)||0]):defaultF;
+    doc.setFont('helvetica','normal');
+    fItems.forEach((it,i)=>{T(String(i+1),mg,y);T(it[0],mg+6,y);T(':',mg+72,y);T('Rs. '+(it[1]||0).toFixed(2),W-mg,y,{align:'right'});ln(5);});
+    doc.setFont('helvetica','bold');T('TOTAL',mg+72,y);T(':',mg+86,y);T('Rs. '+partF.toFixed(2),W-mg,y,{align:'right'});ln(8);
+
+    // TOTAL ABSTRACT
+    doc.setFont('helvetica','bold');doc.setFontSize(10);T('TOTAL ABSTRACT OF THE ENTIRE PROPERTY',mg,y);ln(6);
+    doc.setFontSize(9);T('',mg,y);T('Market Value',mg+100,y);T('Circle Rate Value',W-mg,y,{align:'right'});ln(5);doc.line(mg,y-1,W-mg,y-1);
+    const abs=[['Part A','Land',landMV,landCR],['Part B','Building',bldgVal,bldgVal],['Part C','Extra items',partC,partC],['Part D','Amenities',partD,partD],['Part E','Miscellaneous',partE,partE],['Part F','Services',partF,partF]];
+    doc.setFont('helvetica','normal');
+    abs.forEach(a=>{T(a[0],mg,y);T(a[1],mg+16,y);T(':',mg+72,y);T('Rs. '+a[2].toFixed(2),mg+75,y);T('Rs. '+a[3].toFixed(2),W-mg,y,{align:'right'});ln(5);});
+    T(':',mg+72,y);T('Rs. '+(totalMV).toFixed(2),mg+75,y);T('Rs. '+(totalCR).toFixed(2),W-mg,y,{align:'right'});ln(4);
+    doc.setFont('helvetica','bold');T('TOTAL OR SAY',mg,y);T(':',mg+72,y);T('Rs. '+afmt(mv)+'.00',mg+75,y);T('Rs. '+afmt(totalCR)+'.00',W-mg,y,{align:'right'});ln(5);
+    doc.setFont('helvetica','normal');T('('+an2w(mv)+' Only)',mg+75,y);ln(6);doc.line(mg,y-1,W-mg,y-1);ln(4);
+
+    // Notes
+    doc.setFontSize(8.5);
+    ['* (Valuation: Here the approved valuer should discuss in detail his approach to valuation of property and indicate how the value has been arrived at, supported by necessary calculations. Also, such aspects as i) Saleability ii) Likely rental values in future in iii) Any likely income it may generate, may be discussed).',
+     '* Photograph of owner/representative with property in background to been closed.',
+     '* Screen shot of longitude/latitude and co-ordinates of property using GPS/Various Apps/Internetsites.'].forEach(n=>{
+      const ls=doc.splitTextToSize(n,cW);T(ls,mg,y);ln(ls.length*4.5+2);
+    });ln(3);
+
+    // Conclusion
+    doc.setFont('helvetica','bold');doc.setFontSize(9);T('Conclusion:',mg,y);ln(5);
+    doc.setFont('helvetica','normal');
+    const conc=`As a result of my appraisal and analysis, it's my considered opinion that the present Fair Market Value of the above property in prevailing condition with aforesaid specifications as on ${fmtDate(data.valDate)} is Rs. ${afmt(mv)}.00 (${an2w(mv)} Only). The Net Realizable Value is Rs.${afmt(rv)}.00 (${an2w(rv)} Only) and the Distress Value Rs.${afmt(dv)}.00 (${an2w(dv)} Only).`;
+    const cls=doc.splitTextToSize(conc,cW);T(cls,mg,y);ln(cls.length*5+8);
+    // Signature
+    doc.setFont('helvetica','bold');T('(ER. JAI PRAKASH AGRAWAL)',W-mg,y,{align:'right'});ln(5);
+    doc.setFont('helvetica','normal');T('Place: Lucknow',mg,y);T('Govt. Approved Valuer',W-mg,y,{align:'right'});ln(5);
+    T('Date: '+fmtDate(data.reportDate),mg,y);T('Regn. No. 149/88, Cat – I',W-mg,y,{align:'right'});ln(8);
+    // Bank Manager verification
+    const vtext_bm='The undersigned have inspected the property detailed in the valuation report dated……………. on …………… and we are satisfy that the fair and reasonable value of the property is Rs……………… (Rupees…………………………………………………………………………)';
+    const vls=doc.splitTextToSize(vtext_bm,cW);T(vls,mg,y);ln(vls.length*5+5);
+    T('Date:',mg,y);T('Branch Manager:',W-mg,y,{align:'right'});
+
+    // ═══════════════════════════════════════════
+    // PAGE 7 — DECLARATION
+    // ═══════════════════════════════════════════
+    np();hdr(7);
+    doc.setFont('helvetica','bold');doc.setFontSize(9);
+    T('Format - E',mg,y);T('Annexure - II',W-mg,y,{align:'right'});ln(6);
+    T('DECLARATION FROM VALUERS',W/2,y,{align:'center'});ln(6);
+    doc.setFont('helvetica','normal');T('I hereby declare that',mg,y);ln(6);
+    const decls=[
+      ['a.)',`The information furnished in my valuation report dated ${fmtDate(data.reportDate)} is true and correct to the best of my knowledge and belief and I have made an impartial and true valuation of the property.`],
+      ['b).','I have no direct or indirect interest in the property valued;'],
+      ['c).',`I have personally inspected the property on ${fmtDate(data.inspectDate)} The work is not sub-contracted to any other valuer and carried out by myself.`],
+      ['d).','I have not been convicted of any offence and sentenced to a term of Imprisonment;'],
+      ['e).','I have not been found guilty of misconduct in my professional capacity.'],
+      ['f).','I have read the Handbook on Policy, Standards and procedure for Real Estate Valutaion, 2011 of IBA and this report is in conformity to the "Standards" enshrined for valuation in the Part-B of the above handbook to the best of my ability.'],
+      ['g).','I have read the International Valuation Standards (IVS) and the report submitted to the Bank for the respective asset class is in conformity to the "Standards" as enshrined for valuation in the IVS in "Generral Standards" and "Asset Standards" as applicable.'],
+      ['h).','I abide by the Model Code of Conduct for empanelment of valuer in the Bank. (Annexure III- A signed copy of same to be taken and kept along with this declaration)'],
+      ['i).','I am registered under Section 34 AB of the Wealth Tax Act, 1957.'],
+      ['j).','I am the proprietor / partner / authorized official of the firm / company, who is competent to sign this valuation report.'],
+      ['k).','Further, I hereby provide the following information.'],
+    ];
+    decls.forEach(d=>{
+      chk(8);doc.setFont('helvetica','normal');doc.setFontSize(9);
+      T(d[0],mg,y);const ls=doc.splitTextToSize(d[1],cW-10);T(ls,mg+8,y);ln(ls.length*5+2);
+    });ln(2);
+    // Declaration table
+    const dtCols=[mg,mg+5,mg+95,mg+100];
+    doc.setFont('helvetica','bold');doc.setFontSize(8.5);
+    doc.setFillColor(220,220,220);doc.rect(mg,y-3,cW,5,'F');
+    T('S.No.',dtCols[0],y);T('Particulars',dtCols[1],y);T('Valuer Comment',dtCols[2]+5,y);ln(5);doc.line(mg,y-1,W-mg,y-1);
+    const decTbl=[
+      ['1.','background information of the asset being valued;','Residential building on Free-hold land'],
+      ['2.','purpose of valuation and appointing authority',`To find out the Fair Market Value and Realizable Value, ${data.bank}, ${data.branch}.`],
+      ['3.','identity of the valuer and any other experts involved in the valuation;','Er. Jai Prakash Agrawal, B. Tech. (Civil & Municipal Engg.), Registered & Approved Valuer'],
+      ['4.','disclosure of valuer interest or conflict, if any;','There is no any interest in the valued property.'],
+      ['5.','date of appointment, valuation date and date of report;',`${fmtDate(data.inspectDate)}, ${fmtDate(data.valDate)} & ${fmtDate(data.reportDate)}`],
+      ['6.','inspections and/or investigations undertaken;','Land rate inquired in the vicinity'],
+      ['7.','nature and sources of the information used or relied upon;','Enquired in visinty from local people'],
+      ['8.','procedures adopted in carrying out the valuation and valuation standards followed;','Standard prodcedure of valuation has been adopted.'],
+      ['9.','restrictions on use of the report, if any;','This report may be used only for the purpose mentioned in this report.'],
+      ['10.','major factors that were taken into account during the valuation;',data.decFactors||'Shape, Size & location'],
+      ['11.','Caveats, limitations and disclaimers to the extent they explain or elucidate the limitations faced by valuer, which shall not be for the purpose of limiting his responsibility for the valuation report.',data.decCaveats||'1) Legal aspects have not been considered in this valuation report.\n2) This report is based on details and documents provided by Bank & information given by owner/ owner\'s representative.'],
+    ];
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    decTbl.forEach(r=>{
+      chk(10);
+      T(r[0],dtCols[0],y);
+      const l1=doc.splitTextToSize(r[1],87);T(l1,dtCols[1],y);
+      const l2=doc.splitTextToSize(r[2],67);T(l2,dtCols[2]+5,y);
+      ln(Math.max(l1.length,l2.length)*4.5+3);doc.line(mg,y-1,W-mg,y-1);
+    });
+    ln(5);
+    doc.setFont('helvetica','bold');doc.setFontSize(9);
+    T('(ER. JAI PRAKASH AGRAWAL)',W-mg,y,{align:'right'});ln(5);
+    doc.setFont('helvetica','normal');
+    T('Date: '+fmtDate(data.reportDate),mg,y);T('Govt. Approved Valuer',W-mg,y,{align:'right'});ln(5);
+    T('Place: Lucknow',mg,y);T('Regn. No. 149/88, Cat - I',W-mg,y,{align:'right'});
+
+    // ═══════════════════════════════════════════
+    // PAGES 8-10 — MODEL CODE OF CONDUCT
+    // ═══════════════════════════════════════════
+    np();hdr(8);
+    doc.setFont('helvetica','bold');doc.setFontSize(10);T('ANNEXURE III',W/2,y,{align:'center'});ln(5);
+    T('MODEL CODE OF CONDUCT FOR VALUERS',W/2,y,{align:'center'});ln(4);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    T('{Adopted in line with Companies (Registered Valuers and Valuation Rules, 2017)}',W/2,y,{align:'center'});ln(5);
+    T('All valuers empanelled with bank shall strictly adhere to the following code of conduct:',mg,y);ln(6);
+    const mcoc=[
+      ['Integrity and Fairness',''],
+      ['1.','A valuer shall, in the conduct of his/its business, follow high standards of integrity and fairness in all his/its dealings with his/its clients and other valuers.'],
+      ['2.','A valuer shall maintain integrity by being honest, straightforward, and forthright in all professional relationships.'],
+      ['3.','A valuer shall endeavour to ensure that he/it provides true and adequate information and shall not misrepresent any facts or situations.'],
+      ['4.','A valuer shall refrain from being involved in any action that would bring disrepute to the profession.'],
+      ['5','A valuer shall keep public interest foremost while delivering his services.'],
+      ['Professional Competence and Due Care',''],
+      ['6.','A valuer shall render at all times high standards of service, exercise due diligence, ensure proper care and exercise independent professional judgment.'],
+      ['7.','A valuer shall carry out professional services in accordance with the relevant technical and professional standards that may be specified from time to time'],
+      ['8.','A valuer shall continuously maintain professional knowledge and skill to provide competent professional service based on up-to-date developments in practice, prevailing regulations/guidelines and techniques.'],
+      ['9.','In the preparation of a valuation report, the valuer shall not disclaim liability for his/its expertise or deny his/its duty of care, except to the extent that the assumptions are based on statements of fact provided by the company or its auditors or consultants or information available in public domain and not generated by the valuer.'],
+      ['10.','A valuer shall not carry out any instruction of the client in so far as they are incompatible with the requirements of integrity, objectivity and independence.'],
+      ['11.','A valuer shall clearly state to his client the services that he would be competent to provide and the services for which he would be relying on other valuers or professionals or for which the client can have a separate arrangement with other valuers.'],
+      ['Independence and Disclosure of Interest',''],
+      ['12.','A valuer shall act with objectivity in his/its professional dealings by ensuring that his/its decisions are made without the presence of any bias, conflict of interest, coercion, or undue influence of any party, whether directly connected to the valuation assignment or not.'],
+      ['13.','A valuer shall not take up an assignment if he/it or any of his/its relatives or associates is not independent in terms of association to the company.'],
+      ['14.','A valuer shall maintain complete independence in his/its professional relationships and shall conduct the valuation independent of external influences.'],
+      ['15.','A valuer shall wherever necessary disclose to the clients, possible sources of conflicts of duties and interests, while providing unbiased services.'],
+      ['16.','A valuer shall not deal in securities of any subject company after any time when he/it first becomes aware of the possibility of his/its association with the valuation, and in accordance with the Securities and Exchange Board of India (Prohibition of Insider Trading) Regulations, 2015 or till the time the valuation report becomes public, whichever is earlier.'],
+      ['18.','As an independent valuer, the valuer shall not charge success fee.'],
+      ['19.','In any fairness opinion or independent expert opinion submitted by a valuer, if there has been a prior engagement in an unconnected transaction, the valuer shall declare the association with the company during the last five years.'],
+      ['Confidentiality',''],
+      ['20.','A valuer shall not use or divulge to other clients or any other party any confidential information about the subject company, which has come to his/its knowledge without proper and specific authority or unless there is a legal or professional right or duty to disclose.'],
+      ['Information Management',''],
+      ['21.','A valuer shall ensure that he/ it maintains written contemporaneous records for any decision taken, the reasons for taking the decision, and the information and evidence in support of such decision.'],
+      ['22.','A valuer shall appear, co-operate and be available for inspections and investigations carried out by the authority.'],
+      ['23.','A valuer shall provide all information and records as may be required by the authority, the Tribunal, Appellate Tribunal, or any other statutory regulatory body.'],
+      ['24.','A valuer while respecting the confidentiality of information acquired during the course of performing professional services, shall maintain proper working papers for a period of three years or such longer period as required in its contract.'],
+      ['Gifts and hospitality:',''],
+      ['25.','A valuer or his/its relative shall not accept gifts or hospitality which undermines or affects his independence as a valuer.'],
+      ['26.','A valuer shall not offer gifts or hospitality or a financial or any other advantage to a public servant or any other person with a view to obtain or retain work for himself/itself.'],
+      ['Remuneration and Costs.',''],
+      ['27.','A valuer shall provide services for remuneration which is charged in a transparent manner, is a reasonable reflection of the work necessarily and properly undertaken, and is not inconsistent with the applicable rules.'],
+      ['28.','A valuer shall not accept any fees or charges other than those which are disclosed in a written contract with the person to whom he would be rendering service.'],
+      ['Occupation, employability and restrictions.',''],
+      ['29.','A valuer shall refrain from accepting too many assignments, if he/it is unlikely to be able to devote adequate time to each of his/ its assignments.'],
+      ['30.','A valuer shall not conduct business which in the opinion of the authority or the registered valuer organisation discredits the profession.'],
+    ];
+    doc.setFontSize(8.5);
+    mcoc.forEach(item=>{
+      chk(7);
+      if(!item[1]){// Section heading
+        doc.setFont('helvetica','bold');T(item[0],mg,y);ln(5);doc.setFont('helvetica','normal');
+      } else {
+        T(item[0],mg,y);const ls=doc.splitTextToSize(item[1],cW-10);T(ls,mg+8,y);ln(ls.length*4.5+2);
+      }
+    });
+    // Signature at end of code of conduct
+    chk(15);ln(5);
+    T('Date: '+fmtDate(data.reportDate),mg,y);ln(5);T('Place: Lucknow',mg,y);
+
+    // ═══════════════════════════════════════════
+    // PHOTO PAGE
+    // ═══════════════════════════════════════════
+    const pageNum_photo = doc.getNumberOfPages()+1;
+    np();hdr(String(pageNum_photo));
+    doc.setFont('helvetica','bold');doc.setFontSize(11);
+    const ptxt='PHOTO';T(ptxt,W/2,y,{align:'center'});
+    const ptw=doc.getTextWidth(ptxt);doc.line(W/2-ptw/2,y+1,W/2+ptw/2,y+1);ln(6);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    const pdesc=doc.splitTextToSize(data.propDesc||'',cW);T(pdesc,mg,y);ln(pdesc.length*5+2);
+    doc.setFont('helvetica','bold');T('Owner: ',mg,y);doc.setFont('helvetica','normal');T(data.owner||'',mg+14,y);ln(8);
+    // Photos grid 2 columns
+    const photos=data.photos||[];
+    const imgW=(cW-5)/2, imgH=55;
+    let px=mg, py=y;
+    if(photos.length===0){
+      doc.setDrawColor(180);doc.rect(mg,py,imgW,imgH);doc.rect(mg+imgW+5,py,imgW,imgH);
+      doc.setFontSize(8);T('[ Photo 1 ]',mg+imgW/2,py+imgH/2,{align:'center'});T('[ Photo 2 ]',mg+imgW+5+imgW/2,py+imgH/2,{align:'center'});
+    } else {
+      photos.forEach((src,i)=>{
+        if(i>0&&i%2===0){py+=imgH+4;px=mg;}
+        try{doc.addImage(src,'JPEG',px,py,imgW,imgH);}catch(e){doc.setDrawColor(180);doc.rect(px,py,imgW,imgH);}
+        px=px===mg?mg+imgW+5:mg;
+      });
+    }
+    y=py+imgH+4;
+
+    // ═══════════════════════════════════════════
+    // GPS + CIRCLE RATE PAGE
+    // ═══════════════════════════════════════════
+    const pageNum_gps = doc.getNumberOfPages()+1;
+    np();hdr(String(pageNum_gps));
+    doc.setFont('helvetica','bold');doc.setFontSize(11);
+    const gtxt='GPS MAP/ Circle Rate';T(gtxt,W/2,y,{align:'center'});
+    const gtw=doc.getTextWidth(gtxt);doc.line(W/2-gtw/2,y+1,W/2+gtw/2,y+1);ln(6);
+    doc.setFont('helvetica','normal');doc.setFontSize(8.5);
+    const gpdesc=doc.splitTextToSize(data.propDesc||'',cW);T(gpdesc,mg,y);ln(gpdesc.length*5+2);
+    doc.setFont('helvetica','bold');T('Owner: ',mg,y);doc.setFont('helvetica','normal');T(data.owner||'',mg+14,y);ln(5);
+    T(data.gps||'',W/2,y,{align:'center'});ln(8);
+    // GPS image
+    if(data.gpsImg){try{doc.addImage(data.gpsImg,'JPEG',mg,y,cW,70);}catch(e){doc.setDrawColor(180);doc.rect(mg,y,cW,70);T('[ GPS Map ]',W/2,y+35,{align:'center'});}y+=74;}
+    else{doc.setDrawColor(180);doc.rect(mg,y,cW,60);T('[ GPS Screenshot ]',W/2,y+30,{align:'center'});y+=64;}
+    ln(5);
+    // Circle Rate image
+    doc.setFont('helvetica','bold');doc.setFontSize(10);T('Circle Rate (from Registrar\'s Office)',W/2,y,{align:'center'});ln(6);
+    if(data.crImg){try{const rem=282-y;doc.addImage(data.crImg,'JPEG',mg,y,cW,Math.min(rem,80));}catch(e){doc.setDrawColor(180);doc.rect(mg,y,cW,60);T('[ Circle Rate ]',W/2,y+30,{align:'center'});}}
+    else{doc.setDrawColor(180);doc.rect(mg,y,cW,60);T('[ Circle Rate Screenshot ]',W/2,y+30,{align:'center'});}
+
+    // SAVE
+    doc.save((data.owner||'Report').replace(/[^a-zA-Z0-9]/g,'_')+'_'+fmtDate(data.reportDate)+'.pdf');
+  }
+  </script>
+
+</body>
+</html>
